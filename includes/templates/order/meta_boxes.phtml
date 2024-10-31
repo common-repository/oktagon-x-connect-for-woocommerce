@@ -1,0 +1,522 @@
+<?php
+
+/**
+ * @var array $additionalOptions
+ * @var string $apiDraftTransaction
+ * @var string $apiLiveTransaction
+ * @var array $calculatedParcels
+ * @var bool $customizeParcels
+ * @var array $customParcels
+ * @var int $instance
+ * @var bool $isDebug
+ * @var string $locale
+ * @var \WC_Order $order
+ * @var int $orderId
+ * @var int $packageId
+ * @var array<int, array> $packageItems
+ * @var string $selectedServicePoint
+ * @var array $servicePoints
+ * @var string $shipmentNumber
+ * @var string $shipmentStatus
+ * @var string $shipmentStatusValue
+ * @var string $shippingService
+ * @var string $shippingServiceId
+ * @var array $shippingServiceObject
+ * @var string $shippingServiceTitle
+ * @var array $shippingServices
+ * @var array $shippingLabels
+ * @var bool $showProcessButton
+ * @var bool $showFixedErrorsButton
+ * @var array $trackingLinks
+ * @phan-file-suppress PhanUndeclaredGlobalVariable
+ * @phan-file-suppress PhanTypeArraySuspiciousNull
+ * @phan-file-suppress PhanTypeInvalidDimOffset
+ */
+
+/**
+ * phpcs:disable Generic.Files.LineLength.TooLong
+ */
+
+?>
+<fieldset class="oktagon-x-connect-for-woocommerce-order-wrapper <?php echo $isDebug ? 'is-debug' : 'is-not-debug'; ?>" data-package="<?php echo \esc_attr($packageId); ?>" data-order="<?php echo \esc_attr($orderId); ?>" data-nonce="<?php echo \wp_create_nonce('wc_oktagon_x_connect_order_action'); ?>">
+<dl>
+<?php if ($packageId >= 0) { ?>
+    <dt><?php echo esc_html__('Package Number', 'oktagon-x-connect-for-woocommerce'); ?></dt>
+    <dd><?php echo \esc_attr($packageId + 1); ?></dd>
+<?php } ?>
+<?php
+
+if (!empty($packageItems)) {
+    echo '<dt class="package-items">' . esc_html__('Package Items', 'oktagon-x-connect-for-woocommerce') . '</dt>';
+    echo '<dd class="package-items"><ul class="package-items">';
+    foreach ($packageItems as $item) {
+        printf(
+            '<li><a href="%s">%s &times; %d</a></li>',
+            \admin_url(
+                sprintf(
+                    'post.php?post=%s&action=edit',
+                    $item['data']->get_product_id()
+                )
+            ),
+            \esc_attr($item['data']->get_name()),
+            \esc_attr($item['quantity'])
+        );
+    }
+    echo '</ul></dd>';
+}
+
+?>
+
+
+<?php if ($shippingService) { ?>
+    <dt class="shipping-service">
+    <?php echo esc_html__('Shipping Service', 'oktagon-x-connect-for-woocommerce'); ?>
+    </dt>
+    <dd class="shipping-service" data-service-id="<?php echo \esc_attr($shippingService); ?>" data-service-title="<?php echo \esc_attr($shippingServiceTitle); ?>">
+    <?php
+
+    if ($shippingServiceTitle) {
+        echo \esc_attr($shippingServiceTitle);
+    } else {
+        echo \esc_attr($shippingServiceId ? $shippingServiceId : $shippingService);
+    }
+
+    ?>
+    </dd>
+<?php } ?>
+
+<?php if ($shippingServices) { ?>
+    <dt class="change-shipping-service"></dt>
+    <dd class="change-shipping-service changeable closed">
+        <label>
+            <input type="checkbox" />
+            <span><?php echo esc_html__('I want to change shipping service', 'oktagon-x-connect-for-woocommerce'); ?></span>
+        </label>
+        <div class="change-form">
+            <p>
+                <select name="change_shipping_service[<?php echo $packageId; ?>]">
+                    <option></option>
+                <?php
+                foreach ($shippingServices as $api => $services) {
+                    printf(
+                        '<optgroup label="%s">',
+                        \esc_attr($api)
+                    );
+                    foreach ($services as $service) {
+                        $serviceId = $api . '.' . $service['id'];
+                        printf(
+                            '<option value="%s"%s>%s</option>',
+                            \esc_attr($serviceId),
+                            ($serviceId === $shippingService
+                                ? ' selected="selected"'
+                                : ''),
+                            \esc_attr($service['title'] . ' (' . $service['id'] . ')')
+                        );
+                    }
+                    echo '</optgroup>';
+                }
+                ?>
+                </select>
+            </p>
+            <p>
+                <a
+                    class="button-secondary oktagon-x-connect-for-woocommerce-order-action-button"
+                    data-action="change-service"
+                >
+                <?php echo esc_html__('Save change', 'oktagon-x-connect-for-woocommerce'); ?>
+                </a>
+            </p>
+        </div>
+    </dd>
+<?php } ?>
+
+<?php if ($additionalOptions) { ?>
+    <dt class="additional-options">
+    <?php echo esc_html__('Additional options', 'oktagon-x-connect-for-woocommerce'); ?>
+    </dt>
+    <dd class="additional-options">
+        <dl>
+    <?php
+    foreach ($additionalOptions as $key => $value) {
+        $presentationKey =
+            $shippingServiceObject['options'][$key]['description']['title'][$locale]
+            ?? $key;
+        $presentationValue =
+            $value;
+        if (
+            isset($shippingServiceObject['options'][$key]['type'])
+            && is_string($shippingServiceObject['options'][$key]['type'])
+        ) {
+            switch ($shippingServiceObject['options'][$key]['type']) {
+                case 'Checkbox':
+                    $presentationValue = $value
+                        ? esc_html__('Yes', 'oktagon-x-connect-for-woocommerce')
+                        : esc_html__('No', 'oktagon-x-connect-for-woocommerce');
+                    break;
+                case 'Select':
+                    $presentationValue =
+                        $shippingServiceObject['options'][$key]['options'][$value]
+                        ?? $value;
+                    break;
+            }
+        }
+        printf(
+            '<dt>%s</dt><dd>%s</dd>',
+            \esc_attr($presentationKey),
+            \esc_attr($presentationValue)
+        );
+    }
+    ?>
+    </dl>
+    </dd>
+<?php } ?>
+
+<?php if (!empty($shippingServiceObject['options'])) { ?>
+    <dt class="change-additional-options"></dt>
+    <dd class="change-additional-options changeable closed">
+        <label>
+            <input type="checkbox" />
+            <span><?php echo esc_html__('I want to change additional options', 'oktagon-x-connect-for-woocommerce'); ?></span>
+        </label>
+        <div class="change-form">
+        <?php
+        foreach ($shippingServiceObject['options'] as $optionKey => $optionObject) {
+            if (
+                !empty($optionObject['type'])
+                && is_string($optionObject['type'])
+            ) {
+                switch ($optionObject['type']) {
+                    case 'Checkbox':
+                        printf(
+                            '<p>'
+                            . '<label>'
+                            . '<input type="checkbox" data-key="%s"%s />'
+                            . '<span>%s</span>'
+                            . '</label>'
+                            . '</p>',
+                            \esc_attr($optionKey),
+                            !empty($additionalOptions[$optionKey]) ? ' checked="checked"' : '',
+                            \esc_attr($optionObject['description']['title'][$locale])
+                        );
+                        break;
+                    case 'Select':
+                        printf(
+                            '<p>'
+                            . '<label>'
+                            . '<span>%s</span>'
+                            . '<br />'
+                            . '<select data-key="%s">',
+                            \esc_attr($optionObject['description']['title'][$locale]),
+                            \esc_attr($optionKey)
+                        );
+                        if (
+                            !empty($optionObject['options'])
+                            && is_array($optionObject['options'])
+                        ) {
+                            foreach ($optionObject['options'] as $key => $value) {
+                                printf(
+                                    '<option value="%s"%s>%s</option>',
+                                    \esc_attr($key),
+                                    !empty($additionalOptions[$optionKey]) && $additionalOptions[$optionKey] === $key ? ' selected="selected"' : '',
+                                    \esc_attr($value)
+                                );
+                            }
+                        }
+                        print '</select>';
+                        break;
+                }
+            }
+        }
+        ?>
+            <p>
+                <a
+                    class="button-secondary oktagon-x-connect-for-woocommerce-order-action-button"
+                    data-action="change-additional-options"
+                >
+                <?php echo esc_html__('Save change', 'oktagon-x-connect-for-woocommerce'); ?>
+                </a>
+            </p>
+        </div>
+    </dd>
+<?php } ?>
+
+<?php if ($selectedServicePoint) { ?>
+    <dt class="service-point">
+    <?php echo esc_html__('Selected Service Point', 'oktagon-x-connect-for-woocommerce'); ?>
+    </dt>
+    <dd class="service-point">
+        <dl>
+        <?php
+        foreach ($selectedServicePoint as $key => $value) {
+            printf(
+                '<dt>%s</dt><dd id="selected-service-point-%s">%s</dd>',
+                \esc_attr($key),
+                \esc_attr($key),
+                \esc_attr($value)
+            );
+        }
+        ?>
+    </dl>
+</dd>
+<?php } ?>
+
+<?php if ($servicePoints) { ?>
+    <dt class="change-service-point"></dt>
+    <dd class="change-service-point changeable closed">
+        <label>
+            <input type="checkbox" />
+            <span><?php echo esc_html__('I want to change service point', 'oktagon-x-connect-for-woocommerce'); ?></span>
+        </label>
+        <div class="change-form">
+            <p>
+                <select name="change_service_point[<?php echo $packageId; ?>]">
+                    <option></option>
+                <?php
+                foreach ($servicePoints as $servicePoint) {
+                    printf(
+                        '<option value="%s"%s>%s</option>',
+                        base64_encode(
+                            json_encode(
+                                [
+                                    'address' => $servicePoint['address1'],
+                                    'id' => $servicePoint['id'],
+                                    'title' => $servicePoint['title']
+                                ]
+                            )
+                        ),
+                        ($selectedServicePoint
+                            && $selectedServicePoint['id'] === $servicePoint['id']
+                            ? ' selected="selected"'
+                            : ''),
+                        $servicePoint['title']
+                    );
+                }
+                ?>
+                </select>
+            </p>
+            <p>
+                <a
+                class="button-secondary oktagon-x-connect-for-woocommerce-order-action-button"
+                data-action="change-service-point"
+                >
+                    <?php echo esc_html__('Save change', 'oktagon-x-connect-for-woocommerce'); ?>
+                </a>
+            </p>
+        </div>
+    </dd>
+<?php } ?>
+
+<?php if ($shipmentStatus) { ?>
+    <dt class="shipment-status">
+    <?php echo esc_html__('Shipment Status', 'oktagon-x-connect-for-woocommerce'); ?>
+    </dt>
+    <dd class="shipment-status" data-value="<?php echo $shipmentStatusValue; ?>">
+    <?php echo esc_html__($shipmentStatus, 'oktagon-x-connect-for-woocommerce'); ?>
+    </dd>
+<?php } ?>
+
+<?php if ($shipmentNumber) { ?>
+    <dt class="shipment-number">
+    <?php echo esc_html__('Shipment Number', 'oktagon-x-connect-for-woocommerce'); ?>
+    </dt>
+    <dd class="shipment-number"><?php echo $shipmentNumber; ?></dd>
+<?php } ?>
+
+<?php if ($shippingLabels) { ?>
+    <dt class="shipping-labels">
+    <?php echo esc_html__('Shipping Labels', 'oktagon-x-connect-for-woocommerce'); ?>
+    </dt>
+    <dd class="shipping-labels">
+        <ul>
+        <?php
+        foreach ($shippingLabels as $shippingLabelIndex => $shippingLabel) {
+            printf(
+                '<li><a target="_blank" href="%s">%s</a></li>',
+                \esc_attr(\Oktagon\WooCommerce\XConnect\Meta::getShippingLabelUrl($shippingLabel)),
+                sprintf(
+                    esc_html__('Label #%s', 'oktagon-x-connect-for-woocommerce'),
+                    $shippingLabelIndex + 1
+                )
+            );
+        }
+        ?>
+        </ul>
+    </dd>
+<?php } ?>
+
+<?php if ($trackingLinks) { ?>
+    <dt class="tracking-links">
+        <?php echo esc_html__('Tracking Links', 'oktagon-x-connect-for-woocommerce'); ?>
+    </dt>
+    <dd class="tracking-links">
+        <ul>
+        <?php
+        foreach ($trackingLinks as $trackingLinkIndex => $trackingLink) {
+            printf(
+                '<li><a target="_blank" href="%s">%s</a></li>',
+                \esc_attr($trackingLink),
+                sprintf(
+                    esc_html__('Link #%s', 'oktagon-x-connect-for-woocommerce'),
+                    $trackingLinkIndex + 1
+                )
+            );
+        }
+        ?>
+    </ul>
+</dd>
+<?php } ?>
+
+<?php if ($apiDraftTransaction) { ?>
+    <dt class="debug api-draft-transaction"><?php echo esc_html__('API Draft Transaction', 'oktagon-x-connect-for-woocommerce'); ?></dt>
+    <dd class="debug api-draft-transaction"><pre><?php var_export($apiDraftTransaction); ?></pre></dd>
+<?php } ?>
+
+<?php if ($apiLiveTransaction) { ?>
+    <dt class="debug api-live-transaction"><?php echo esc_html__('API Live Transaction', 'oktagon-x-connect-for-woocommerce'); ?></dt>
+    <dd class="debug api-live-transaction"><pre><?php var_export($apiLiveTransaction); ?></pre></dd>
+<?php } ?>
+
+<dt class="calculated-parcels">
+<?php echo esc_html__('Calculated Parcels', 'oktagon-x-connect-for-woocommerce'); ?>
+</dt>
+<dd class="calculated-parcels">
+    <p>
+    <?php echo esc_html__('Dimensions Unit: m', 'oktagon-x-connect-for-woocommerce'); ?>
+    <br /><?php echo esc_html__('Weight Unit: kg', 'oktagon-x-connect-for-woocommerce'); ?>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th><?php echo esc_html__('Description', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Height', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Length', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Weight', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Width', 'oktagon-x-connect-for-woocommerce'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($calculatedParcels as $calculatedParcel) {
+            printf(
+                '<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>',
+                \esc_attr($calculatedParcel['description'] ?? ''),
+                \esc_attr($calculatedParcel['height'] ?? '0'),
+                \esc_attr($calculatedParcel['length'] ?? '0'),
+                \esc_attr($calculatedParcel['weight'] ?? '0'),
+                \esc_attr($calculatedParcel['width'] ?? '0')
+            );
+        }
+        ?>
+    </tbody>
+</table>
+</dd>
+
+<dt class="actions"></dt>
+<dd class="custom-parcels changeable <?php echo $customizeParcels ? 'open' : 'closed'; ?>">
+<label>
+<input type="hidden" name="wc_oktagon_x_connect_customize_parcels[<?php echo $packageId; ?>]" value="0" />
+<input
+type="checkbox"
+class="customize-weight"
+name="wc_oktagon_x_connect_customize_parcels[<?php echo $packageId; ?>]"
+value="1"
+<?php echo $customizeParcels ? ' checked="checked"' : ''; ?>
+/>&nbsp;
+<span>
+<?php echo esc_html__('Customize Parcels', 'oktagon-x-connect-for-woocommerce'); ?>
+</span>
+</label>
+<div class="clip-box">
+    <table>
+        <thead>
+            <tr>
+                <th><?php echo esc_html__('Description', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Height', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Length', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Weight', 'oktagon-x-connect-for-woocommerce'); ?></th>
+                <th><?php echo esc_html__('Width', 'oktagon-x-connect-for-woocommerce'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($customParcels as $customParcelIndex => $customParcel) {
+            echo '<tr data-package="' . \esc_attr($customParcelIndex) . '">';
+            printf(
+                '<td><input type="text" name="wc_oktagon_x_connect_custom_parcels[%s][%s][description]" value="%s" /></td>',
+                \esc_attr($packageId),
+                \esc_attr($customParcelIndex),
+                \esc_attr($customParcel['description'] ?? '')
+            );
+            printf(
+                '<td><input type="text" name="wc_oktagon_x_connect_custom_parcels[%s][%s][height]" value="%s" /></td>',
+                \esc_attr($packageId),
+                \esc_attr($customParcelIndex),
+                \esc_attr($customParcel['height'] ?? 0)
+            );
+            printf(
+                '<td><input type="text" name="wc_oktagon_x_connect_custom_parcels[%s][%s][length]" value="%s" /></td>',
+                \esc_attr($packageId),
+                \esc_attr($customParcelIndex),
+                \esc_attr($customParcel['length'] ?? 0)
+            );
+            printf(
+                '<td><input type="text" name="wc_oktagon_x_connect_custom_parcels[%s][%s][weight]" value="%s" /></td>',
+                \esc_attr($packageId),
+                \esc_attr($customParcelIndex),
+                \esc_attr($customParcel['weight'] ?? 0)
+            );
+            printf(
+                '<td><input type="text" name="wc_oktagon_x_connect_custom_parcels[%s][%s][width]" value="%s" /></td>',
+                \esc_attr($packageId),
+                \esc_attr($customParcelIndex),
+                \esc_attr($customParcel['width'] ?? 0)
+            );
+            echo '</tr>';
+        }
+        ?>
+    </tbody>
+</table>
+<p class="table-actions">
+    <a class="add-row button-secondary">+</a>
+    <a class="sub-row button-secondary">-</a>
+</p>
+</div>
+<p>
+    <a
+    class="button-secondary oktagon-x-connect-for-woocommerce-order-action-button"
+    data-action="save-package"
+    >
+    <?php echo esc_html__('Save package settings', 'oktagon-x-connect-for-woocommerce'); ?>
+    </a>
+</p>
+</dd>
+
+<?php if ($showProcessButton) { ?>
+    <a
+    class="button-primary oktagon-x-connect-for-woocommerce-order-action-button"
+    data-action="process-package"
+    />
+    <?php echo esc_html__('Process', 'oktagon-x-connect-for-woocommerce'); ?>
+    </a>
+<?php } ?>
+
+<?php if ($showFixedErrorsButton) { ?>
+    <a
+    class="button-secondary oktagon-x-connect-for-woocommerce-order-action-button"
+    data-action="clear-errors"
+    >
+    <?php echo esc_html__('Errors are fixed!', 'oktagon-x-connect-for-woocommerce'); ?>
+    </a>
+<?php } ?>
+
+<?php
+
+\wp_nonce_field(
+    'oktagon-x-connect-for-woocommerce--process-order',
+    'oktagon-x-connect-for-woocommerce--process-order'
+);
+
+?>
+</dd>
+</dl>
+</fieldset>

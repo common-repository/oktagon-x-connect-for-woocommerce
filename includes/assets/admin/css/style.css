@@ -1,0 +1,273 @@
+body.woocommerce_page_wc-settings .oktagon-x-connect-for-woocommerce-ajax-loader {
+    position: relative;
+}
+
+body.woocommerce_page_wc-settings .oktagon-x-connect-for-woocommerce-ajax-loader:after {
+    background: transparent url('../img/ajax-loader.gif') no-repeat scroll;
+    content: '';
+    height: 32px;
+    left: 0;
+    position: absolute;
+    top: -16px;
+    width: 32px;
+    z-index: 1;
+}
+
+body.woocommerce_page_wc-settings table.form-table th label[for="woocommerce_oktagon-x-connect-for-woocommerce_carrier"] {
+    display: none;
+}
+
+body.woocommerce_page_wc-settings #woocommerce_oktagon-x-connect-for-woocommerce_logic {
+    border: 2px black solid;
+    transition: border-color 0.2s;
+}
+
+body.woocommerce_page_wc-settings fieldset.oktagon-x-connect-for-woocommerce-ajax-loading {
+    position: relative;
+}
+
+body.woocommerce_page_wc-settings fieldset.oktagon-x-connect-for-woocommerce-ajax-loading:before {
+    background: transparent url('../img/ajax-loader.gif') no-repeat scroll;
+    content: '';
+    height: 32px;
+    left: -45px;
+    position: absolute;
+    top: 0;
+    width: 32px;
+    z-index: 1;
+}
+
+body.woocommerce_page_wc-settings .validation-invalid>#woocommerce_oktagon-x-connect-for-woocommerce_logic {
+    border-color: red;
+}
+
+body.woocommerce_page_wc-settings .validation-valid>#woocommerce_oktagon-x-connect-for-woocommerce_logic {
+    border-color: green;
+}
+
+/** Admin Order Meta Boxes Start */
+.oktagon-x-connect-for-woocommerce-order-wrapper {}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dt.debug,
+.oktagon-x-connect-for-woocommerce-order-wrapper dd.debug {
+    display: none;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper.is-debug dt.debug,
+.oktagon-x-connect-for-woocommerce-order-wrapper.is-debug dd.debug {
+    display: block;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dt,
+.oktagon-x-connect-for-woocommerce-order-wrapper dd {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dt {
+    font-weight: bold;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dd+dt {
+    margin-top: 15px;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dd>dl {
+    font-size: smaller;
+    padding: 15px;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper ul {
+    margin: 0;
+    padding: 0;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dd.calculated-parcels {
+    font-size: smaller;
+    padding: 15px;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dd.calculated-parcels>p {
+    margin: 0 0 1em 0;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dd.calculated-parcels table {
+    text-align: left;
+    width: 100%;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .custom-parcels {
+    margin-bottom: 15px;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .custom-parcels .clip-box {
+    display: none;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .custom-parcels.open .clip-box {
+    display: block;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .custom-parcels table {
+    border-collapse: collapse;
+    font-size: smaller;
+    margin-top: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .custom-parcels table input[type="text"] {
+    height: auto;
+    font-size: smaller;
+    min-height: none;
+    min-width: none;
+    width: 100%;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .custom-parcels .table-actions {
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .custom-parcels .table-actions>a {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    width: 50%;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dd.tracking-links a {
+    word-break: break-all;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper dd pre {
+    border: 1px solid #c3c4c7;
+    box-sizing: border-box;
+    font-size: smaller;
+    max-width: 259px;
+    padding: 12px;
+    overflow: scroll;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .changeable>label {
+    font-style: italic;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .changeable .change-form {
+    background: #f0f0f1;
+    display: none;
+    padding: 6px 10px 1px 10px;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .changeable select {
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height: 1.25;
+    min-height: 0;
+    padding: 5px;
+    width: 100%;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .changeable .button-secondary {
+    font-size: 12px;
+    line-height: 2;
+    min-height: 0;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper .changeable.open .change-form {
+    display: block;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper.ajax-loader:after {
+    background: transparent url('../img/ajax-loader.gif') no-repeat scroll;
+    bottom: 16px;
+    content: '';
+    height: 32px;
+    position: absolute;
+    right: 16px;
+    width: 32px;
+    z-index: 1;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper.ajax-loader a.oktagon-x-connect-for-woocommerce-order-action-button {
+    cursor: progress;
+    pointer-events: none;
+}
+
+/** Admin Order Meta Boxes End */
+
+/** Admin Order List Start */
+.oktagon-x-connect-for-woocommerce-order-table,
+.widefat td .oktagon-x-connect-for-woocommerce-order-table ul {
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.oktagon-x-connect-for-woocommerce-order-table>dt {
+    font-weight: bolder;
+}
+
+.oktagon-x-connect-for-woocommerce-order-table>dt,
+.oktagon-x-connect-for-woocommerce-order-table>dd {
+    margin: 0;
+}
+
+.oktagon-x-connect-for-woocommerce-order-table>dd+dt {
+    margin-top: 10px;
+}
+
+.oktagon-x-connect-for-woocommerce-order-table ul {
+    margin: 0;
+}
+
+.oktagon-x-connect-for-woocommerce-order-table .shipping-label-following,
+.oktagon-x-connect-for-woocommerce-order-table .tracking-link-following {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s ease-out;
+}
+
+.oktagon-x-connect-for-woocommerce-order-table:hover .shipping-label-following,
+.oktagon-x-connect-for-woocommerce-order-table:hover .tracking-link-following {
+    height: 16px;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper.ajax-loader:after {
+    background: transparent url('../img/ajax-loader.gif') no-repeat scroll;
+    bottom: 16px;
+    content: '';
+    height: 32px;
+    position: absolute;
+    right: 16px;
+    width: 32px;
+    z-index: 1;
+}
+
+td.oktagon-x-connect-for-woocommerce-order.ajax-loader {
+    position: relative;
+}
+
+td.oktagon-x-connect-for-woocommerce-order.ajax-loader:after {
+    background: transparent url('../img/ajax-loader.gif') no-repeat scroll;
+    bottom: 16px;
+    content: '';
+    height: 32px;
+    position: absolute;
+    right: 16px;
+    width: 32px;
+    z-index: 1;
+}
+
+td.oktagon-x-connect-for-woocommerce-order.ajax-loader a.oktagon-x-connect-for-woocommerce-order-table-action {
+    cursor: progress;
+    pointer-events: none;
+}
+
+.oktagon-x-connect-for-woocommerce-order-wrapper.ajax-loader a.oktagon-x-connect-for-woocommerce-order-action-button {
+    cursor: progress;
+    pointer-events: none;
+}
+
+/** Admin Order List End */

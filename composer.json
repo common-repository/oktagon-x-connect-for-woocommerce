@@ -1,0 +1,11 @@
+{
+    "name": "mediastrategi/oktagon-x-connect-for-woocommerce",
+    "description": "Oktagon X-Connect for WooCommerce",
+    "autoload": {
+        "psr-4": { "Oktagon\\WooCommerce\\XConnect\\": "includes"}
+    },
+    "require": {
+        "setasign/fpdf": "1.8.*",
+        "setasign/fpdi": "^2.5"
+    }
+}

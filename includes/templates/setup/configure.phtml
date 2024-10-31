@@ -1,0 +1,755 @@
+<?php
+
+/**
+ * @var bool $adjustOrderReviewDesign
+ * @var bool $allowAnonymousStatistics
+ * @var bool $automationEnabled
+ * @var string $automationOrderStatus
+ * @var string $consignorAddress1
+ * @var string $consignorAddress2
+ * @var string $consignorCity
+ * @var string $consignorCompany
+ * @var string $consignorContact
+ * @var string $consignorCountry
+ * @var string $consignorEmail
+ * @var string $consignorIsCompany
+ * @var string $consignorName
+ * @var string $consignorPhone
+ * @var string $consignorState
+ * @var string $consignorVatNumber
+ * @var string $consignorZipCode
+ * @var array<string, array> $countries
+ * @var array $enabledServices
+ * @var bool $isDebug
+ * @var array $isValidCredentials
+ * @var string $licensePassword
+ * @var string $licenseUsername
+ * @var string $locale
+ * @var string $mailBody
+ * @var string $mailSubject
+ * @var string $maximumServicePointsLimit
+ * @var string $minimumPackageWeight
+ * @var string $orderProcessing
+ * @var array<string, string> $orderProcessings
+ * @var array<string, string> $orderStatuses
+ * @var string $packageDescription
+ * @var array<string, string> $packageDescriptions
+ * @var array $serviceCredentials
+ * @var array $services
+ * @var string $stackingDimension
+ * @var array<string, string> $stackingDimensions
+ * phpcs:disable Generic.Files.LineLength.TooLong
+ * @phan-file-suppress PhanUndeclaredGlobalVariable
+ */
+
+$supportEmail = 'support@oktagon.se';
+$supportPhoneNumber = '+46214708830';
+
+?>
+<section class="hero">
+    <div class="row">
+        <div class="left">
+            <div class="wrapper">
+                <h2>
+<?php
+echo esc_html__(
+    'Get started with the plugin',
+    'oktagon-x-connect-for-woocommerce'
+);
+?>
+                </h2>
+                <p>
+                    <span>
+<?php
+
+printf(
+    esc_html__(
+        'To use this plugin you need an account from a supported partner and a Oktagon WooCommerce X-Connect product license.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+                    </span>
+                    <a target="_blank" href="https://checkout.oktagon.se/subscribe/626bf16624a23327e25c90db/lifetime">
+                    <?php
+                    echo esc_html__(
+                        "If you don't have a product license you can buy one here.",
+                        'oktagon-x-connect-for-woocommerce'
+                    );
+                    ?>
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:<?php echo esc_attr($supportPhoneNumber); ?>">
+<?php printf(
+    esc_html__(
+        'If you need any help with using this plugin you can call us at %s.',
+        'oktagon-x-connect-for-woocommerce'
+    ),
+    esc_html__($supportPhoneNumber)
+); ?>
+                    </a>
+                    <?php
+                    printf(
+                        '<a href="mailto:%s?subject=%s&body=%s">',
+                        esc_attr($supportEmail),
+                        esc_attr($mailSubject),
+                        esc_attr($mailBody)
+                    ); ?>
+                    <?php printf(
+                        esc_html__(
+                            'You can also e-mail us at %s.',
+                            'oktagon-x-connect-for-woocommerce'
+                        ),
+                        esc_html($supportEmail)
+                    ); ?>
+                </a>
+                </p>
+            </div>
+        </div>
+        <div class="right"><div class="bg"></div><div class="image"></div></div>
+    </div>
+</section>
+<form method="post" action="?page=oktagon-x-connect-for-woocommerce-setup" class="configuration">
+
+    <fieldset class="license">
+        <legend><?php echo esc_html__('Product License', 'oktagon-x-connect-for-woocommerce'); ?></legend>
+        <div>
+            <p class="help-description">
+<?php
+echo esc_html__(
+    'In order to use this plugin, enter your license credentials to Oktagon Shipping API.',
+    'oktagon-x-connect-for-woocommerce'
+);
+?>
+            </p>
+            <p>
+                <label>
+                    <span><?php echo esc_html__('Username', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                    <br /><input type="text" readonly="readonly" class="regular-text" name="licenseUsername" value="<?php echo \esc_attr($licenseUsername); ?>" />
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span><?php echo esc_html__('Password', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                    <br /><input type="text" class="regular-text" name="licensePassword" value="<?php echo \esc_attr($licensePassword); ?>" />
+                </label>
+            </p>
+        </div>
+<?php
+
+if (!empty($isValidCredentials)) {
+    printf(
+        '<p class="credentials-valid">%s</p>',
+        esc_html__(
+            'Product license is valid.',
+            'oktagon-x-connect-for-woocommerce'
+        )
+    );
+} else {
+    printf(
+        '<p class="credentials-invalid">%s</p>',
+        esc_html__(
+            'Product license is invalid.',
+            'oktagon-x-connect-for-woocommerce'
+        )
+    );
+}
+
+?>
+    </fieldset><!-- /fieldset.license -->
+
+    <fieldset class="general">
+        <legend><?php echo esc_html__('General', 'oktagon-x-connect-for-woocommerce'); ?></legend>
+        <div>
+            <p><strong><?php echo esc_html__('Order Processing', 'oktagon-x-connect-for-woocommerce'); ?></strong></p>
+            <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'If you only create draft shipments you need to login to the portal to book, print and track shipments, otherwise if you create live shipments you can do all that directly in WooCommerce.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+            </p>
+            <div class="required">
+                <label>
+                    <span><?php echo esc_html__('Order Processing', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                    <br />
+                    <div class="select-wrapper">
+                        <select required="required" class="wc-enhanced-select" name="orderProcessing">
+<?php
+
+foreach ($orderProcessings as $orderProcessingCode => $orderProcessingValue) {
+    printf(
+        '<option value="%s"%s>%s</option>',
+        \esc_attr($orderProcessingCode),
+        ($orderProcessingCode == $orderProcessing ? ' selected="selected"' : ''),
+        \esc_attr($orderProcessingValue)
+    );
+}
+
+?>
+                       </select>
+                   </div>
+               </label>
+           </div>
+       </div>
+
+        <div>
+            <p><strong><?php echo esc_html__('Packaging', 'oktagon-x-connect-for-woocommerce'); ?></strong></p>
+            <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'Setup in what way package contents should be described and in what dimension products should be stacked when automatically calculating package dimensions.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+            </p>
+
+            <div class="required">
+                <label>
+                    <span><?php echo esc_html__('Package description', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                    <br />
+                    <div class="select-wrapper">
+                        <select required="required" class="wc-enhanced-select" name="packageDescription">
+<?php
+
+foreach ($packageDescriptions as $packageDescriptionKey => $packageDescriptionLabel) {
+    printf(
+        '<option value="%s"%s>%s</option>',
+        \esc_attr($packageDescriptionKey),
+        ($packageDescriptionKey == $packageDescription ? ' selected="selected"' : ''),
+        \esc_attr($packageDescriptionLabel)
+    );
+}
+
+?>
+                       </select>
+                   </div>
+               </label>
+           </div>
+
+            <div class="required">
+                <label>
+                    <span><?php echo esc_html__('Stacking dimension', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                    <br />
+                    <div class="select-wrapper">
+                        <select required="required" class="wc-enhanced-select" name="stackingDimension">
+<?php
+
+foreach ($stackingDimensions as $stackingDimensionKey => $stackingDimensionLabel) {
+    printf(
+        '<option value="%s"%s>%s</option>',
+        \esc_attr($stackingDimensionKey),
+        ($stackingDimensionKey == $stackingDimension ? ' selected="selected"' : ''),
+        \esc_attr($stackingDimensionLabel)
+    );
+}
+
+?>
+                       </select>
+                   </div>
+               </label>
+           </div>
+
+           <p>
+               <label>
+                   <span><?php echo esc_html__('Minimum package weight (kg)', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                   <br /><input type="text" class="regular-text" name="minimumPackageWeight" value="<?php echo \esc_attr($minimumPackageWeight); ?>" />
+               </label>
+           </p>
+            <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'If you lack weight on all products in your shop it can be convenient to specify a minimum calculated weight for shipment packages using this setting.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+            </p>
+
+       </div>
+
+       <div>
+           <p><strong><?php echo esc_html__('Debug Mode', 'oktagon-x-connect-for-woocommerce'); ?></strong></p>
+           <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'With debug mode, API transactions are visible on every order in admin.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+            </p>
+            <p>
+                <label class="check-button">
+                    <input type="checkbox" value="1" name="isDebug"<?php echo $isDebug ? ' checked="checked"' : ''; ?> />&nbsp;
+                    <span><?php echo esc_html__('Activate Debug Mode', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                </label>
+            </p>
+        </div>
+
+        <div>
+            <p><strong><?php echo esc_html__('Anonymous Statistics', 'oktagon-x-connect-for-woocommerce'); ?></strong></p>
+            <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'By enabling collection of anonymous statistics of plugin usage, you help us improve our plugin in the future.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+            </p>
+            <p>
+                <label class="check-button">
+                    <input type="checkbox" value="1" name="allowAnonymousStatistics"<?php echo $allowAnonymousStatistics ? ' checked="checked"' : ''; ?> />&nbsp;
+                    <span><?php echo esc_html__('Activate anonymous statistics', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                </label>
+            </p>
+        </div>
+    </fieldset><!-- /fieldset-general -->
+
+    <fieldset class="automation">
+        <legend><?php echo esc_html__('Automation', 'oktagon-x-connect-for-woocommerce'); ?></legend>
+        <div>
+            <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'With automation you can process orders automatically when they get a specific order status. It will act when you update an orders status.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+            </p>
+            <div>
+                <p>
+                    <label class="check-button">
+                        <input
+                            type="checkbox"
+                            value="1"
+                            name="automationEnabled"
+                            <?php echo $automationEnabled ? ' checked="checked"' : ''; ?>
+                        />&nbsp;
+                        <span>
+                            <?php echo esc_html__('Activate Automation', 'oktagon-x-connect-for-woocommerce'); ?>
+                        </span>
+                    </label>
+                </p>
+            </div>
+            <div>
+                <label>
+                    <span>
+<?php printf(
+    esc_html__(
+        'Select on what order status here that the automation should act on.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+); ?>
+                    </span>
+                    <div class="select-wrapper">
+                        <select class="wc-enhanced-select" name="automationOrderStatus">
+<?php foreach ($orderStatuses as $key => $value) {
+    printf(
+        '<option value="%s"%s>%s</option>',
+        \esc_attr($key),
+        ($key == $automationOrderStatus ? ' selected="selected"' : ''),
+        \esc_attr($value)
+    );
+} ?>
+                        </select>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </fieldset><!-- /fieldset.automation -->
+
+    <fieldset class="checkout">
+        <legend><?php echo esc_html__('Checkout', 'oktagon-x-connect-for-woocommerce'); ?></legend>
+
+            <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'Adjust presentation in checkout here.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+            </p>
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('Limit maximum number of service-points', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="maximumServicePointsLimit" value="<?php echo \esc_attr($maximumServicePointsLimit); ?>" />
+            </label>
+        </p>
+        <p class="help-description small">
+<?php echo esc_html__(
+    'A zero value means there is no limit on the maximum number of service points listed on a shipping-alternative.',
+    'oktagon-x-connect-for-woocommerce'
+); ?>
+</p>
+
+    <p>
+        <label class="check-button">
+            <input type="checkbox" value="1" name="adjustOrderReviewDesign"<?php echo $adjustOrderReviewDesign ? ' checked="checked"' : ''; ?> />&nbsp;
+            <span><?php echo esc_html__('Adjust order-review design', 'oktagon-x-connect-for-woocommerce'); ?></span>
+        </label>
+    </p>
+    <p class="help-description small">
+<?php echo esc_html__(
+    'Enable this to hide information from order-review to make shipping-options larger in checkout.',
+    'oktagon-x-connect-for-woocommerce'
+); ?>
+    </p>
+</fieldset><!-- /fieldset.checkout -->
+
+<fieldset class="consignor">
+<legend><?php echo esc_html__('Consignor', 'oktagon-x-connect-for-woocommerce'); ?></legend>
+<p class="help-description">
+<?php echo esc_html__('Enter the consignor information that will be used in all shipments created with the plugin.', 'oktagon-x-connect-for-woocommerce'); ?>
+</p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('Company Name', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="consignorCompany" value="<?php echo \esc_attr($consignorCompany); ?>" />
+            </label>
+        </p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('Name', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="consignorName" value="<?php echo \esc_attr($consignorName); ?>" />
+            </label>
+        </p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('Contact person name', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="consignorContact" value="<?php echo \esc_attr($consignorContact); ?>" />
+            </label>
+        </p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('E-mail', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="email" class="regular-text" name="consignorEmail" value="<?php echo \esc_attr($consignorEmail); ?>" />
+            </label>
+        </p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('Phone', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="consignorPhone" value="<?php echo \esc_attr($consignorPhone); ?>" />
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <span><?php echo esc_html__('VAT number', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input type="text" class="regular-text" name="consignorVatNumber" value="<?php echo \esc_attr($consignorVatNumber); ?>" />
+            </label>
+        </p>
+
+        <p>
+            <label class="check-button">
+                <input type="checkbox" value="1" name="consignorIsCompany"<?php echo $consignorIsCompany ? ' checked="checked"' : ''; ?> />&nbsp;
+                <span><?php echo esc_html__('Is Company', 'oktagon-x-connect-for-woocommerce'); ?></span>
+            </label>
+        </p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('Address 1', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="consignorAddress1" value="<?php echo \esc_attr($consignorAddress1); ?>" />
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <span><?php echo esc_html__('Address 2', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input type="text" class="regular-text" name="consignorAddress2" value="<?php echo \esc_attr($consignorAddress2); ?>" />
+            </label>
+        </p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('City', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="consignorCity" value="<?php echo \esc_attr($consignorCity); ?>" />
+            </label>
+        </p>
+
+        <p class="required">
+            <label>
+                <span><?php echo esc_html__('Zip-code', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input required="required" type="text" class="regular-text" name="consignorZipCode" value="<?php echo \esc_attr($consignorZipCode); ?>" />
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <span><?php echo esc_html__('State / region', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br /><input type="text" class="regular-text" name="consignorState" value="<?php echo \esc_attr($consignorState); ?>" />
+            </label>
+        </p>
+
+
+<div class="required">
+            <label>
+                <span><?php echo esc_html__('Country', 'oktagon-x-connect-for-woocommerce'); ?></span>
+                <br />
+                <div class="select-wrapper">
+                    <select required="required" class="wc-enhanced-select" name="consignorCountry">
+<?php
+
+foreach ($countries as $countryCode => $countryName) {
+    printf(
+        '<option value="%s"%s>%s</option>',
+        \esc_attr($countryCode),
+        ($countryCode == $consignorCountry ? ' selected="selected"' : ''),
+        \esc_attr($countryName)
+    );
+}
+
+?>
+                    </select>
+                </div>
+            </label>
+        </div>
+    </fieldset><!-- /fieldset.consignor -->
+
+    <fieldset class="api">
+        <div>
+            <p><strong><?php echo esc_html__('Fill in your shipping-service credentials.', 'oktagon-x-connect-for-woocommerce'); ?></strong></p>
+            <p class="help-description">
+<?php
+
+printf(
+    esc_html__(
+        'You received this information when you created your shipping-service account.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+
+?>
+</p>
+
+            <?php
+
+            if ($services) {
+                foreach ($services as $serviceName => $service) {
+                    if (
+                        empty($service['options'])
+                        || !is_array($service['options'])
+                    ) {
+                        continue;
+                    }
+
+                    $activeService = !empty($enabledServices[$serviceName]);
+
+                    echo '<div class="service '
+                        . ($activeService ? 'active-service' : 'not-active-service')
+                        . '">';
+
+                    if (
+                        !empty($service['description'])
+                        && !empty($service['description']['title'])
+                        && !empty($service['description']['title'][$locale])
+                    ) {
+                        printf(
+                            '<p><strong>%s</strong></p>',
+                            \esc_html($service['description']['title'][$locale])
+                        );
+                    }
+
+                    if (
+                        !empty($service['description'])
+                        && !empty($service['description']['description'])
+                        && !empty($service['description']['description'][$locale])
+                    ) {
+                        printf(
+                            '<p><span>%s</span></p>',
+                            \esc_html($service['description']['description'][$locale])
+                        );
+                    }
+
+                    printf(
+                        '<p><label>'
+                        . '<input type="hidden" name="enabledServices[%s]" value="0" />'
+                        . '<input type="checkbox" class="toggle-service" name="enabledServices[%s]" value="1"%s />'
+                        . '<span>%s</span></label></p>',
+                        \esc_attr($serviceName),
+                        \esc_attr($serviceName),
+                        ($activeService ? ' checked="checked"' : ''),
+                        \esc_html__(
+                            'Enable service',
+                            'oktagon-x-connect-for-woocommerce'
+                        )
+                    );
+
+                    echo '<div class="service-options">';
+                    foreach ($service['options'] as $key => $option) {
+                        $optionTitle = '';
+                        if (
+                            !empty($option['description'])
+                            && !empty($option['description']['title'])
+                            && !empty($option['description']['title'][$locale])
+                        ) {
+                            $optionTitle = \esc_html(
+                                $option['description']['title'][$locale]
+                            );
+                        }
+                        $optionDescription = '';
+                        if (
+                            !empty($option['description'])
+                            && !empty($option['description']['description'])
+                            && !empty($option['description']['description'][$locale])
+                        ) {
+                            $optionDescription = \esc_html(
+                                $option['description']['description'][$locale]
+                            );
+                        }
+
+                        if ($option['type'] === 'Text') {
+                            printf(
+                                '<p%s>
+                                    <label>
+                                        <span>%s</span>
+                                        <br /><input type="text" name="%s" value="%s" />
+                                    </label>
+                                    <br /><span>%s</span>
+                                </p>',
+                                !empty($option['required']) ? ' class="required"' : '',
+                                \esc_html($optionTitle),
+                                'service_credentials[' . \esc_attr($serviceName) . '][' . \esc_attr($key) . ']',
+                                isset($serviceCredentials[$serviceName])
+                                && isset($serviceCredentials[$serviceName][$key])
+                                ? \esc_attr($serviceCredentials[$serviceName][$key])
+                                : '',
+                                \esc_attr($optionDescription)
+                            );
+                        } elseif ($option['type'] == 'Checkbox') {
+                            printf(
+                                '<p%s>
+                                    <label>
+                                        <input type="hidden" name="%s" value="0" />
+                                        <input type="checkbox" name="%s" value="1"%s />
+                                        <span>%s</span>
+                                    </label>
+                                    <br /><span>%s</span>
+                                </p>',
+                                !empty($option['required']) ? ' class="required"' : '',
+                                'service_credentials[' . \esc_attr($serviceName) . '][' . \esc_attr($key) . ']',
+                                'service_credentials[' . \esc_attr($serviceName) . '][' . \esc_attr($key) . ']',
+                                isset($serviceCredentials[$serviceName])
+                                && !empty($serviceCredentials[$serviceName][$key])
+                                ? ' checked="checked"'
+                                : '',
+                                \esc_html($optionTitle),
+                                \esc_html($optionDescription)
+                            );
+                        } elseif ($option['type'] == 'Select') {
+                            printf(
+                                '<p%s>
+                                    <label>
+                                        <span>%s</span>
+                                        <br /><select name="%s">',
+                                !empty($option['required']) ? ' class="required"' : '',
+                                \esc_html($optionTitle),
+                                'service_credentials[' . \esc_attr($serviceName) . '][' . \esc_attr($key) . ']'
+                            );
+                            if (
+                                !empty($option['options'])
+                                && is_array($option['options'])
+                            ) {
+                                foreach ($option['options'] as $optionKey => $optionValue) {
+                                    $optionSelected =
+                                        !empty($serviceCredentials[$serviceName][$key])
+                                        && $serviceCredentials[$serviceName][$key] === $optionKey;
+                                    printf(
+                                        '<option value="%s"%s>%s</option>',
+                                        \esc_attr($optionKey),
+                                        $optionSelected ? ' selected="selected"' : '',
+                                        \esc_html($optionValue)
+                                    );
+                                }
+                            }
+                            printf(
+                                '</select></label><br /><span>%s</span></p>',
+                                \esc_html($optionDescription)
+                            );
+                        }
+                    }
+
+                    if (isset($isValidCredentials[$serviceName])) {
+                        if ($isValidCredentials[$serviceName] === '1') {
+                            printf(
+                                '<p class="credentials-valid">%s</p>',
+                                esc_html__(
+                                    'Service credentials are valid.',
+                                    'oktagon-x-connect-for-woocommerce'
+                                )
+                            );
+                        } elseif ($isValidCredentials[$serviceName] === '-1') {
+                            printf(
+                                '<p class="credentials-invalid">%s</p>',
+                                esc_html__(
+                                    'Service credentials are invalid, please review.',
+                                    'oktagon-x-connect-for-woocommerce'
+                                )
+                            );
+                        } elseif ($isValidCredentials[$serviceName] === '0') {
+                            printf(
+                                '<p class="credentials-invalid">%s</p>',
+                                esc_html__(
+                                    'Service communication problems.',
+                                    'oktagon-x-connect-for-woocommerce'
+                                )
+                            );
+                        }
+                    }
+                    echo '</div></div>';
+                }
+            } else {
+                printf(
+                    '<p>%s</p>',
+                    esc_html__(
+                        'You need to enter a valid product license above to be able to enter service credentials.',
+                        'oktagon-x-connect-for-woocommerce'
+                    )
+                );
+            }
+
+            ?>
+        </div>
+    </fieldset><!-- /fieldset.api -->
+
+    <p>
+        <input type="submit" name="submit" class="button button-secondary" value="<?php echo esc_html__('Save', 'oktagon-x-connect-for-woocommerce'); ?>" />
+        <input type="submit" name="submit" class="button button-primary" value="<?php echo esc_html__('Save and Finish', 'oktagon-x-connect-for-woocommerce'); ?>" />
+        <input type="hidden" name="oktagon-x-connect-for-woocommerce-setup-nonce" value="<?php echo \wp_create_nonce('oktagon-x-connect-for-woocommerce-setup-nonce'); ?>" />
+    </p>
+</form>

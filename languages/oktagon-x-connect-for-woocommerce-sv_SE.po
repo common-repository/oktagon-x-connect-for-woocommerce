@@ -1,0 +1,1057 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce SHIPIT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-28 10:13+0100\n"
+"PO-Revision-Date: 2024-03-28 10:29+0100\n"
+"Last-Translator: \n"
+"Language-Team: Svenska\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__\n"
+"X-Loco-Version: 2.4.2; wp-5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: ../languages\n"
+"X-Poedit-SearchPathExcluded-1: ../.git\n"
+
+#: includes/Cache.php:29
+#, php-format
+msgid "Saved cache for key \"%s\" into \"%s\""
+msgstr "Sparade cache för nyckel \"%s\" vid \"%s\""
+
+#: includes/Cache.php:41
+msgid "Failed to save cache!"
+msgstr "Misslyckades att spara cache!"
+
+#: includes/Cache.php:51
+#, php-format
+msgid "Failed to save cache, error: \"%s\""
+msgstr "Misslyckades att spara cache, fel: \"%s\""
+
+#: includes/Curl/Connection.php:145
+#, php-format
+msgid "Unexpected response: %s"
+msgstr "Oväntat svar: %s"
+
+#: includes/Meta.php:211
+msgid "Failed to get system locale!"
+msgstr "Misslyckades att hämta systemets språk!"
+
+#: includes/Meta.php:312
+#, php-format
+msgid "Service %s response: (%s) %s"
+msgstr "Tjänst %s svar: (%s) %s"
+
+#: includes/Meta.php:393
+#, php-format
+msgid ""
+"Unexpected implementation error, contact developer of plugin! Errors: %s"
+msgstr "Oväntat implementationsfel, kontakta skaparna av tillägget! Fel: %s"
+
+#: includes/Meta.php:403
+#, php-format
+msgid "Your environment is not supported by the extension, error message: %s"
+msgstr "Din miljö stöds in av tillägget, felmeddelande: %s"
+
+#: includes/Meta.php:491 includes/Meta.php:611
+#, php-format
+msgid "Error: %s"
+msgstr "Fel: %s"
+
+#: includes/Meta.php:796
+msgid "Expecting array package contents!"
+msgstr "Förväntade vektor paketinnehåll!"
+
+#: includes/Meta.php:973
+#, php-format
+msgid "Unexpected type: %s"
+msgstr "Oväntad typ: %s"
+
+#: includes/Meta.php:991
+msgid "Draft"
+msgstr "Utkast"
+
+#: includes/Meta.php:993
+msgid "Failed"
+msgstr "Misslyckades"
+
+#: includes/Meta.php:995
+msgid "Live"
+msgstr "Färdigställd"
+
+#: includes/Setup.php:54
+msgid "X-Connect Dashboard"
+msgstr "X-Connect Kontrollpanel"
+
+#: includes/Setup.php:154
+msgid "You lack permissions to access this area!"
+msgstr "Du saknar rättigheter för att komma åt detta område!"
+
+#: includes/Setup.php:160
+msgid "Route does not exist"
+msgstr "Rutt finns inte"
+
+#: includes/Setup.php:183 includes/Setup.php:259
+msgid "I need help to get started with my plugin"
+msgstr "Jag behöver hjälp att komma igång med mitt tillägg"
+
+#: includes/Setup.php:190 includes/Setup.php:266
+msgid "Describe what you need help with here:\n"
+msgstr "Beskriv vad du behöver hjälp med här:\n"
+
+#: includes/Setup.php:204
+msgid "Get started with your plugin"
+msgstr "Kom igång med ditt tillägg"
+
+#: includes/Setup.php:228
+msgid "Redirecting.."
+msgstr "Omdirigerar.."
+
+#: includes/Setup.php:248 includes/templates/setup/configure.phtml:56
+msgid "Get started with the plugin"
+msgstr "Kom igång med tillägget"
+
+#: includes/Setup.php:627
+msgid "Successfully saved settings"
+msgstr "Lyckades spara inställningar"
+
+#: includes/Setup.php:643 includes/templates/setup/configure.phtml:754
+msgid "Save and Finish"
+msgstr "Spara och avsluta"
+
+#: includes/Setup.php:654
+msgid "Please fill in all required fields."
+msgstr "Vänligen fyll i alla obligatoriska fält."
+
+#: includes/Setup.php:712
+msgid "Create panel shipments"
+msgstr "Skapa utkastsändningar"
+
+#: includes/Setup.php:716
+msgid "Create live shipments"
+msgstr "Skapa färdigställda sändningar"
+
+#: includes/Setup.php:724
+msgid "Product Categories"
+msgstr "Produktkategorier"
+
+#: includes/Setup.php:728
+msgid "Product Names"
+msgstr "Produktnamn"
+
+#: includes/Setup.php:732
+msgid "Product SKUs"
+msgstr "Produkters artikelnummer"
+
+#: includes/Setup.php:736
+msgid "Empty"
+msgstr "Tom"
+
+#: includes/Setup.php:745 includes/templates/order/meta_boxes.phtml:391
+#: includes/templates/order/meta_boxes.phtml:434
+msgid "Height"
+msgstr "Höjd"
+
+#: includes/Setup.php:749 includes/templates/order/meta_boxes.phtml:392
+#: includes/templates/order/meta_boxes.phtml:435
+msgid "Length"
+msgstr "Längd"
+
+#: includes/Setup.php:753 includes/templates/order/meta_boxes.phtml:394
+#: includes/templates/order/meta_boxes.phtml:437
+msgid "Width"
+msgstr "Bredd"
+
+#: includes/Shipment.php:54 includes/Shipment.php:64
+#, php-format
+msgid "Found no shipping service to ship in order %d!"
+msgstr "Hittade ingen frakttjänst att leverera för beställning %d!"
+
+#: includes/Shipment.php:96
+#, php-format
+msgid "Successfully processed %d shipment-packages for order %d"
+msgstr "Lyckades behandla %d leveranspaket för beställning %d"
+
+#: includes/Shipment.php:108
+#, php-format
+msgid "Failed to process %d shipment-packages for order %d!"
+msgstr "Misslyckades att behandla %d leveranspaket för beställning %d!"
+
+#: includes/Shipment.php:122 includes/Shipment.php:147
+#, php-format
+msgid "Could not process order %d because it was not found!"
+msgstr "Kunde inte behandla beställning %d för den hittades inte!"
+
+#: includes/Shipment.php:162
+msgid ""
+"Missing global setting for order-processing, please run the installation-"
+"guide first!"
+msgstr ""
+"Saknar allmänna inställningar för beställningsbehandling, vänligen kör "
+"installationsguiden först!"
+
+#: includes/Shipment.php:181
+#, php-format
+msgid "Order %d already has a draft shipment!"
+msgstr "Beställning %d har redan en utkastleverans!"
+
+#: includes/Shipment.php:195
+#, php-format
+msgid "Order %d already has a live shipment!"
+msgstr "Beställning %d har redan en färdigställd leverans!"
+
+#: includes/Shipment.php:206
+#, php-format
+msgid "Order %d shipment has failed status, please fix error first!"
+msgstr ""
+"Beställning %ds leverans har misslyckad status, vänligen fixa felet först!"
+
+#: includes/Shipment.php:237
+#, php-format
+msgid "Successfully created shipment for order %d and package %d"
+msgstr "Lyckades skapa sändning för beställning %d och paket %d"
+
+#: includes/Shipment.php:248
+#, php-format
+msgid "Successfully created shipment for order %d"
+msgstr "Lyckades skapa sändning för beställning %d"
+
+#: includes/Shipment.php:263
+#, php-format
+msgid "Failed to create shipment for order %d and package %d!"
+msgstr "Misslyckades att skapa leverans för beställning %d och paket %d!"
+
+#: includes/Shipment.php:274
+#, php-format
+msgid "Failed to create shipment for order %d!"
+msgstr "Misslyckades att skapa leverans för beställning %d!"
+
+#: includes/Shipment.php:290
+#, php-format
+msgid "Failed to create shipment for order %d and package %d! Error: %s"
+msgstr ""
+"Misslyckades att skapa leverans för beställning %d och paket %d! Fel: %s"
+
+#: includes/Shipment.php:302
+#, php-format
+msgid "Failed to create shipment for order %d! Error: %s"
+msgstr "Misslyckades att skapa leverans för beställning %d! Fel: %s"
+
+#: includes/ShippingMethod.php:47
+msgid "Shipping method with connection to a shipping partner."
+msgstr "Leveranssätt med anslutning till en fraktpartner."
+
+#: includes/ShippingMethod.php:53
+msgid "Title"
+msgstr "Titel"
+
+#: includes/ShippingMethod.php:56 includes/ShippingMethod.php:66
+msgid "Will be displayed to customer in checkout."
+msgstr "Kommer visas för kunder i kassan."
+
+#: includes/ShippingMethod.php:59
+msgid "X-Connect Shipping Method"
+msgstr "X-Connect Fraktsätt"
+
+#: includes/ShippingMethod.php:63 includes/templates/order/meta_boxes.phtml:390
+#: includes/templates/order/meta_boxes.phtml:433
+msgid "Description"
+msgstr "Beskrivning"
+
+#: includes/ShippingMethod.php:75
+msgid "Enter a cost (excl. tax) or sum, e.g. 10.00 * [qty]."
+msgstr "Ange en kostnad (exkl. moms) eller summa, t.ex. 10.00 * [qty]."
+
+#: includes/ShippingMethod.php:81
+msgid ""
+"Use [qty] for the number of items, <code>[cost]</code> for the total cost of "
+"items, and [fee percent=\"10\" min_fee=\"20\" max_fee=\"\"] for percentage "
+"based fees."
+msgstr ""
+"Använd [qty] för antalet artiklar, [cost] för den totala kostnaden för "
+"artiklarna, och [fee percent=\"10\" min_fee=\"20\" max_fee=\"\"] för "
+"procentbaserad avgift."
+
+#: includes/ShippingMethod.php:88
+msgid "Cost"
+msgstr "Kostnad"
+
+#: includes/ShippingMethod.php:92
+msgid "Tax status"
+msgstr "Momsstatus"
+
+#: includes/ShippingMethod.php:97
+msgid "Taxable"
+msgstr "Momsbelagd"
+
+#: includes/ShippingMethod.php:103 includes/templates/order/meta_boxes.phtml:73
+msgid "Shipping Service"
+msgstr "Frakttjänst"
+
+#: includes/ShippingMethod.php:108
+#: includes/templates/order/meta_boxes.phtml:135
+msgid "Additional options"
+msgstr "Ytterligare inställningar"
+
+#: includes/ShippingMethod.php:113
+msgid "Enable service point selection"
+msgstr "Aktivera val av serviceplats"
+
+#: includes/ShippingMethod.php:118
+msgid "If you leave this field empty the default logotype below will be used."
+msgstr "Om du lämnar detta fält tomt kommer standardlogotypen nedan användas."
+
+#: includes/ShippingMethod.php:122
+msgid "Custom URL to logotype"
+msgstr "Anpassad URL till logotyp"
+
+#: includes/ShippingMethod.php:128
+msgid "Select a logotype that is built-in in the plugin."
+msgstr "Välj en logotyp som är inbyggd i tillägget."
+
+#: includes/ShippingMethod.php:133
+msgid "None"
+msgstr "Ingen"
+
+#: includes/ShippingMethod.php:154
+msgid "Default Logotype"
+msgstr "Standardlogotyper"
+
+#: includes/ShippingMethod.php:159
+msgid "Carrier"
+msgstr "Transportör"
+
+#: includes/ShippingMethod.php:164
+msgid ""
+"Use this to limit when a shipping method is available. Use $weight for cart "
+"weight and $subtotal for cart subtotal before discounts and "
+"$subtotalPostDiscounts for cart subtotal after discounts. Allowed operators "
+"are: &lt;, &lt;=, &gt;, &gt;=, =, &lt;&gt;, &amp;, |. Example weight above "
+"200: $weight &gt; 200. Example weight above or equal 100 or subtotal above "
+"500: $weight &gt;= 100 | $subtotal &gt; 500. Example weight and subtotal "
+"after discounts is below 100: $weight &lt; 100 &amp; $subtotalPostDiscounts "
+"&lt; 100"
+msgstr ""
+"Använd den här inställningen för att begränsa när fraktsättet är "
+"tillgängligt. Använd $weight för varukorgens vikt och $subtotal för "
+"varukorgens delsumma före rabatter och $subtotalPostDiscounts efter "
+"rabatter. Tillåtna operatorer är: &lt;, &lt;=, &gt;, &gt;=, =, &lt;&gt;, "
+"&amp;, |. Exempel vikt över 200: $weight &gt; 200. Exempel vikt över eller "
+"lika med 100 eller delsumma över 500: $weight &gt;= 100 | $subtotal &gt; "
+"500. Exempel vikt och delsumma efter rabatter under 100: $weight &lt; 100 "
+"&amp; $subtotalPostDiscounts &lt; 100"
+
+#: includes/ShippingMethod.php:168
+msgid "Logic"
+msgstr "Logik"
+
+#: includes/ShippingMethod.php:203 includes/ShippingMethod.php:308
+#, php-format
+msgid "%s args: %s"
+msgstr "%s args: %s"
+
+#: includes/ShippingMethod.php:260
+#, php-format
+msgid "Cart logic args: %s"
+msgstr "Varukorgslogik argument: %s"
+
+#: includes/ShippingMethod.php:320 includes/Woocommerce.php:368
+#, php-format
+msgid "Package hash-key: %s"
+msgstr "Paket hashnyckel: %s"
+
+#: includes/ShippingMethod.php:375
+#, php-format
+msgid "%s adding shipping rate: %s"
+msgstr "%s la till fraktsätt: %s"
+
+#: includes/Template.php:45
+#, php-format
+msgid "Failed to find template: \"%s\" at: \"%s\""
+msgstr "Misslyckades att hitta mall: \"%s\" vid: \"%s\""
+
+#: includes/Woocommerce.php:423
+#, php-format
+msgid "Setting destination postcode from session to: %s"
+msgstr "Ställer in mottagande postnummer för sessionen till: %s"
+
+#: includes/Woocommerce.php:444
+#, php-format
+msgid "Pick-up points: %s"
+msgstr "Upphämtningsplatser: %s"
+
+#: includes/Woocommerce.php:459
+#, php-format
+msgid "Session ready: %s"
+msgstr "Session redo: %s"
+
+#: includes/Woocommerce.php:463 includes/templates/order/meta_boxes.phtml:153
+msgid "Yes"
+msgstr "Ja"
+
+#: includes/Woocommerce.php:464 includes/templates/order/meta_boxes.phtml:154
+msgid "No"
+msgstr "Nej"
+
+#: includes/Woocommerce.php:470
+#, php-format
+msgid "Session service point: %s"
+msgstr "Session serviceplats: %s"
+
+#: includes/Woocommerce.php:501
+#, php-format
+msgid ""
+"Updated session agent after shipping rate (%s) for shipping-service (%s): %s"
+msgstr ""
+"Uppdaterade sessionens serviceplats efter fraktsätt (%s) för frakttjänst "
+"(%s): %s"
+
+#: includes/Woocommerce.php:585 includes/Woocommerce.php:609
+#: includes/Woocommerce.php:640 includes/Woocommerce.php:650
+msgid "Click here to track your order shipment."
+msgstr "Klicka här för att spåra din leverans."
+
+#: includes/Woocommerce.php:595 includes/Woocommerce.php:619
+#, php-format
+msgid "Click here to track your shipment for package %d."
+msgstr "Klicka här för att spåra din leverans för paket %d."
+
+#: includes/Woocommerce.php:669
+#, php-format
+msgid "Setting selected custom zip code: %s"
+msgstr "Sparar vart anpassat postnummer: %s"
+
+#: includes/Woocommerce.php:678
+msgid "Failed to update selected custom zip code"
+msgstr "Misslyckades med att uppdatera valt postnummer"
+
+#: includes/Woocommerce.php:727
+#, php-format
+msgid "Updated session agent via AJAX (%s) for shipping-service (%s): %s"
+msgstr ""
+"Uppdaterade sessionens serviceplats via AJAX (%s) för frakttjänsten (%s): %s"
+
+#: includes/Woocommerce.php:738
+msgid "Failed to update session agent via AJAX"
+msgstr "Misslyckades att spara valt utlämningsställe via AJAX"
+
+#: includes/Wordpress.php:353
+#, php-format
+msgid "Changed parcels settings on order %d and package %d"
+msgstr "Ändrade paketinställningar för beställning %d och paket %d"
+
+#: includes/Wordpress.php:429
+#, php-format
+msgid "Flagged errors as fixed on order %s and package %d!"
+msgstr "Markerade fel som fixade på beställning %s och paket %d!"
+
+#: includes/Wordpress.php:473
+#, php-format
+msgid "Changed selected service point on order %d and package %d"
+msgstr "Ändrade valt ombud på order %d och paket %d"
+
+#: includes/Wordpress.php:499
+#, php-format
+msgid "Changed additional options on order %d and package %d"
+msgstr "Ändrade ytterligare inställningar för order %d och paket %d"
+
+#: includes/Wordpress.php:530
+#, php-format
+msgid "Changed shipping service on order %d and package %d"
+msgstr "Ändrade frakttjänst på order %d och paket %d"
+
+#: includes/Wordpress.php:730 includes/Wordpress.php:734
+#: includes/Wordpress.php:1125 includes/Wordpress.php:1143
+#: includes/Wordpress.php:1368
+msgid "X-Connect"
+msgstr "X-Connect"
+
+#: includes/Wordpress.php:758
+msgid "X-Connect - Print Shipping Labels"
+msgstr "X-Connect - Skriv ut fraktetiketter"
+
+#: includes/Wordpress.php:762
+msgid "X-Connect - Process Shipping"
+msgstr "X-Connect - Behandla leverans"
+
+#: includes/Wordpress.php:896 includes/Wordpress.php:915
+msgid "Downloading labels in new window.."
+msgstr "Laddar ner fraktetiketter i ett nytt fönster.."
+
+#: includes/Wordpress.php:932
+msgid "Downloading label in new window.."
+msgstr "Laddar ner fraktetikett i ett nytt fönster.."
+
+#: includes/Wordpress.php:941
+#, php-format
+msgid "Failed to find any shipping-labels for orders %s!"
+msgstr "Misslyckades hitta någon fraktetikett för beställningarna %s!"
+
+#: includes/Wordpress.php:966
+#, php-format
+msgid "Bulk process of shipments completed, %d items processed."
+msgstr "Massbehandling av leveranser klar, %d paket behandlades."
+
+#: includes/Wordpress.php:975
+msgid "Bulk process of shipments completed, no items processed."
+msgstr "Massbehandling av leveranser klar, inga paket behandlades."
+
+#: includes/Wordpress.php:1006 includes/Wordpress.php:1009
+msgid "Download shipping labels"
+msgstr "Ladda ner fraktetiketter"
+
+#: includes/Wordpress.php:1012 includes/Wordpress.php:1015
+msgid "Process shipping"
+msgstr "Behandla leveranser"
+
+#: includes/Wordpress.php:1034 oktagon-x-connect-for-woocommerce.php:52
+msgid "Oktagon X-Connect"
+msgstr "Oktagon X-Connect"
+
+#: includes/Wordpress.php:1039
+msgid "Please setup your shipping by using our installation guide."
+msgstr ""
+"Vänligen ställ in dina leveranser genom att använda vår installationsguide."
+
+#: includes/Wordpress.php:1457 includes/templates/order/meta_boxes.phtml:499
+msgid "Process"
+msgstr "Behandla"
+
+#: includes/Wordpress.php:1474
+msgid "Return"
+msgstr "Returnera"
+
+#: includes/Wordpress.php:1520 includes/templates/order/meta_boxes.phtml:320
+msgid "Shipment Number"
+msgstr "Leveransnummer"
+
+#: includes/Wordpress.php:1539
+#, php-format
+msgid "Shipping Label #%s"
+msgstr "Fraktetikett #%s"
+
+#: includes/Wordpress.php:1549 includes/templates/order/meta_boxes.phtml:327
+msgid "Shipping Labels"
+msgstr "Fraktetiketter"
+
+#: includes/Wordpress.php:1567
+#, php-format
+msgid "Tracking Link #%s"
+msgstr "Spårningslänk #%s"
+
+#: includes/Wordpress.php:1575 includes/templates/order/meta_boxes.phtml:349
+msgid "Tracking Links"
+msgstr "Spårningslänkar"
+
+#: oktagon-x-connect-for-woocommerce.php:31
+msgid "Oktagon X-Connect for WooCommerce"
+msgstr "Oktagon X-Connect för WooCommerce"
+
+#: oktagon-x-connect-for-woocommerce.php:32
+msgid ""
+"Create shipping options connected with shipping-services, display pick-up "
+"points in checkout, create shipments on orders, get shipment shipping labels "
+"and track shipments."
+msgstr ""
+"Skapa fraktalternativ med koppling mot frakttjänster, visa serviceplatser i "
+"kassan, skapa leveranser på beställningar, skriva ut fraktetiketter och "
+"spåra leveranser."
+
+#: oktagon-x-connect-for-woocommerce.php:33
+msgid "Shipping method with connection to a shipping-service."
+msgstr "Fraktsätt med anslutning till en frakttjänst."
+
+#: oktagon-x-connect-for-woocommerce.php:54
+msgid "Can't find WooCommerce, is it installed and activated?"
+msgstr "Kunde inte hitta WooCommerce, är det installerat och aktiverat?"
+
+#: oktagon-x-connect-for-woocommerce.php:115
+msgid "This plugin requires PHP version 7.4.0+!"
+msgstr "Detta tillägg kräver PHP version 7.4.0+!"
+
+#: includes/templates/checkout/after-shipping-rate.phtml:30
+msgid "Search for delivery options & agents"
+msgstr "Sök leveransalternativ & ombud"
+
+#: includes/templates/checkout/after-shipping-rate.phtml:36
+msgid "Enter your zip code"
+msgstr "Ange ditt postnummer"
+
+#: includes/templates/checkout/after-shipping-rate.phtml:40
+msgid "Search"
+msgstr "Sök"
+
+#: includes/templates/checkout/after-shipping-rate.phtml:45
+msgid "Choose delivery option"
+msgstr "Välj leveransalternativ"
+
+#: includes/templates/checkout/after-shipping-rate.phtml:91
+msgid "Deliver to this service point"
+msgstr "Levereras till detta ombud"
+
+#: includes/templates/order/meta_boxes.phtml:44
+msgid "Package Number"
+msgstr "Paketnummer"
+
+#: includes/templates/order/meta_boxes.phtml:50
+msgid "Package Items"
+msgstr "Paketföremål"
+
+#: includes/templates/order/meta_boxes.phtml:93
+msgid "I want to change shipping service"
+msgstr "Jag vill ändra frakttjänst"
+
+#: includes/templates/order/meta_boxes.phtml:126
+#: includes/templates/order/meta_boxes.phtml:236
+#: includes/templates/order/meta_boxes.phtml:302
+msgid "Save change"
+msgstr "Spara ändring"
+
+#: includes/templates/order/meta_boxes.phtml:179
+msgid "I want to change additional options"
+msgstr "Jag vill ändra ytterligare inställningar"
+
+#: includes/templates/order/meta_boxes.phtml:245
+msgid "Selected Service Point"
+msgstr "Vald serviceplats"
+
+#: includes/templates/order/meta_boxes.phtml:268
+msgid "I want to change service point"
+msgstr "Jag vill byta ombud"
+
+#: includes/templates/order/meta_boxes.phtml:311
+msgid "Shipment Status"
+msgstr "Leveransstatus"
+
+#: includes/templates/order/meta_boxes.phtml:337
+#, php-format
+msgid "Label #%s"
+msgstr "Fraktetikett #%s"
+
+#: includes/templates/order/meta_boxes.phtml:359
+#, php-format
+msgid "Link #%s"
+msgstr "Länk #%s"
+
+#: includes/templates/order/meta_boxes.phtml:370
+msgid "API Draft Transaction"
+msgstr "API Utkast transaktion"
+
+#: includes/templates/order/meta_boxes.phtml:375
+msgid "API Live Transaction"
+msgstr "API Färdigställd transaktion"
+
+#: includes/templates/order/meta_boxes.phtml:380
+msgid "Calculated Parcels"
+msgstr "Beräknade paket"
+
+#: includes/templates/order/meta_boxes.phtml:384
+msgid "Dimensions Unit: m"
+msgstr "Dimensionsenhet: m"
+
+#: includes/templates/order/meta_boxes.phtml:385
+msgid "Weight Unit: kg"
+msgstr "Viktenhet: kg"
+
+#: includes/templates/order/meta_boxes.phtml:393
+#: includes/templates/order/meta_boxes.phtml:436
+msgid "Weight"
+msgstr "Vikt"
+
+#: includes/templates/order/meta_boxes.phtml:426
+msgid "Customize Parcels"
+msgstr "Anpassa paket"
+
+#: includes/templates/order/meta_boxes.phtml:489
+msgid "Save package settings"
+msgstr "Spara paketinställningar"
+
+#: includes/templates/order/meta_boxes.phtml:508
+msgid "Errors are fixed!"
+msgstr "Felen är fixade!"
+
+#: includes/templates/setup/configure.phtml:67
+msgid ""
+"To use this plugin you need an account from a supported partner and a "
+"Oktagon WooCommerce X-Connect product license."
+msgstr ""
+"För att använda detta tillägg behöver du ett konto hos någon partner som "
+"stöds och en Oktagon WooCommerce X-Connect produktlicens."
+
+#: includes/templates/setup/configure.phtml:77
+msgid "If you don't have a product license you can buy one here."
+msgstr "Om du inte har en produktlicens kan du köpa en här."
+
+#: includes/templates/setup/configure.phtml:87
+#, php-format
+msgid "If you need any help with using this plugin you can call us at %s."
+msgstr ""
+"Om du behöver hjälp med att använda detta tillägg kan du ringa oss på %s."
+
+#: includes/templates/setup/configure.phtml:102
+#, php-format
+msgid "You can also e-mail us at %s."
+msgstr "Du kan också mejla oss på %s."
+
+#: includes/templates/setup/configure.phtml:117
+msgid "Product License"
+msgstr "Produktlicens"
+
+#: includes/templates/setup/configure.phtml:122
+msgid ""
+"In order to use this plugin, enter your license credentials to Oktagon "
+"Shipping API."
+msgstr ""
+"För att kunna använda det här tillägget, ange dina licensuppgifter för "
+"Oktagon Shipping API."
+
+#: includes/templates/setup/configure.phtml:129
+msgid "Username"
+msgstr "Användarnamn"
+
+#: includes/templates/setup/configure.phtml:135
+msgid "Password"
+msgstr "Lösenord"
+
+#: includes/templates/setup/configure.phtml:146
+msgid "Product license is valid."
+msgstr "Produktlicensen är giltig."
+
+#: includes/templates/setup/configure.phtml:154
+msgid "Product license is invalid."
+msgstr "Produktlicensen är ogiltig."
+
+#: includes/templates/setup/configure.phtml:164
+msgid "General"
+msgstr "Allmänt"
+
+#: includes/templates/setup/configure.phtml:166
+#: includes/templates/setup/configure.phtml:181
+msgid "Order Processing"
+msgstr "Beställningsbehandling"
+
+#: includes/templates/setup/configure.phtml:172
+msgid ""
+"If you only create draft shipments you need to login to the portal to book, "
+"print and track shipments, otherwise if you create live shipments you can do "
+"all that directly in WooCommerce."
+msgstr ""
+"Om du bara skapar obekräftade sändningar så behöver du logga in i portalen "
+"för att boka, skriva ut och spåra sändningar, annars om du skapar bekräftade "
+"sändningar kan du göra allt det direkt i WooCommerce."
+
+#: includes/templates/setup/configure.phtml:204
+msgid "Packaging"
+msgstr "Paketering"
+
+#: includes/templates/setup/configure.phtml:210
+msgid ""
+"Setup in what way package contents should be described and in what dimension "
+"products should be stacked when automatically calculating package dimensions."
+msgstr ""
+"Ställ in hur paketinnehåll ska beskrivas och i vilken dimension produkter "
+"ska staplas när tillägget automatiskt beräknar paketdimensioner."
+
+#: includes/templates/setup/configure.phtml:220
+msgid "Package description"
+msgstr "Paketbeskrivning"
+
+#: includes/templates/setup/configure.phtml:243
+msgid "Stacking dimension"
+msgstr "Staplingsdimension"
+
+#: includes/templates/setup/configure.phtml:266
+msgid "Minimum package weight (kg)"
+msgstr "Minimum paketvikt (kg)"
+
+#: includes/templates/setup/configure.phtml:275
+msgid ""
+"If you lack weight on all products in your shop it can be convenient to "
+"specify a minimum calculated weight for shipment packages using this setting."
+msgstr ""
+"Om du saknar vikt på alla produkter i din butik kan det vara bekvämt att "
+"kunna ange en beräknad minimumvikt för paket genom att använda den här "
+"inställningen."
+
+#: includes/templates/setup/configure.phtml:286
+msgid "Debug Mode"
+msgstr "Felsökningsläge"
+
+#: includes/templates/setup/configure.phtml:292
+msgid "With debug mode, API transactions are visible on every order in admin."
+msgstr ""
+"Med felsökningsläge så syns API transaktioner på varje beställning i admin."
+
+#: includes/templates/setup/configure.phtml:302
+msgid "Activate Debug Mode"
+msgstr "Aktivera felsökningsläge"
+
+#: includes/templates/setup/configure.phtml:308
+msgid "Anonymous Statistics"
+msgstr "Anonym statistik"
+
+#: includes/templates/setup/configure.phtml:314
+msgid ""
+"By enabling collection of anonymous statistics of plugin usage, you help us "
+"improve our plugin in the future."
+msgstr ""
+"Om du aktiverar insamling av anonym statistik hur tillägget används så "
+"hjälper du oss förbättra tillägget i framtiden."
+
+#: includes/templates/setup/configure.phtml:324
+msgid "Activate anonymous statistics"
+msgstr "Aktivera anonym statistik"
+
+#: includes/templates/setup/configure.phtml:331
+msgid "Automation"
+msgstr "Automatisering"
+
+#: includes/templates/setup/configure.phtml:338
+msgid ""
+"With automation you can process orders automatically when they get a "
+"specific order status. It will act when you update an orders status."
+msgstr ""
+"Med automationen kan du behandla beställningar automatiskt när de får en "
+"specifik beställningsstatus. Den kommer agera när du uppdaterar en "
+"beställnings status."
+
+#: includes/templates/setup/configure.phtml:355
+msgid "Activate Automation"
+msgstr "Aktivera automation"
+
+#: includes/templates/setup/configure.phtml:365
+msgid "Select on what order status here that the automation should act on."
+msgstr "Välj vid vilken beställningsstatus automation kommer agera."
+
+#: includes/templates/setup/configure.phtml:388
+msgid "Checkout"
+msgstr "Kassan"
+
+#: includes/templates/setup/configure.phtml:395
+msgid "Adjust presentation in checkout here."
+msgstr "Påverka presentationen av kassan här."
+
+#: includes/templates/setup/configure.phtml:404
+msgid "Limit maximum number of service-points"
+msgstr "Begränsa maximala antalet av serviceplatser"
+
+#: includes/templates/setup/configure.phtml:410
+msgid ""
+"A zero value means there is no limit on the maximum number of service points "
+"listed on a shipping-alternative."
+msgstr ""
+"Ett nollvärde betyder att de inte finns någon gräns för hur många "
+"serviceplatser som visas för ett fraktalternativ."
+
+#: includes/templates/setup/configure.phtml:418
+msgid "Adjust order-review design"
+msgstr "Anpassa designen för ordersammanfattningen"
+
+#: includes/templates/setup/configure.phtml:423
+msgid ""
+"Enable this to hide information from order-review to make shipping-options "
+"larger in checkout."
+msgstr ""
+"Aktivera det här för att dölja information från ordersammanfattningen för "
+"att ge mer rum åt leveransalternativen i kassan."
+
+#: includes/templates/setup/configure.phtml:430
+msgid "Consignor"
+msgstr "Avsändare"
+
+#: includes/templates/setup/configure.phtml:432
+msgid ""
+"Enter the consignor information that will be used in all shipments created "
+"with the plugin."
+msgstr ""
+"Ange din avsändarinformation som kommer användas i alla leveranser skapade "
+"med tillägget."
+
+#: includes/templates/setup/configure.phtml:437
+msgid "Company Name"
+msgstr "Företagsnamn"
+
+#: includes/templates/setup/configure.phtml:444
+msgid "Name"
+msgstr "Namn"
+
+#: includes/templates/setup/configure.phtml:451
+msgid "Contact person name"
+msgstr "Namn på kontaktperson"
+
+#: includes/templates/setup/configure.phtml:458
+msgid "E-mail"
+msgstr "E-post"
+
+#: includes/templates/setup/configure.phtml:465
+msgid "Phone"
+msgstr "Telefonnummer"
+
+#: includes/templates/setup/configure.phtml:472
+msgid "VAT number"
+msgstr "VAT-nummer"
+
+#: includes/templates/setup/configure.phtml:480
+msgid "Is Company"
+msgstr "Är företag"
+
+#: includes/templates/setup/configure.phtml:486
+msgid "Address 1"
+msgstr "Adressrad 1"
+
+#: includes/templates/setup/configure.phtml:493
+msgid "Address 2"
+msgstr "Adressrad 2"
+
+#: includes/templates/setup/configure.phtml:500
+msgid "City"
+msgstr "Stad"
+
+#: includes/templates/setup/configure.phtml:507
+msgid "Zip-code"
+msgstr "Postnummer"
+
+#: includes/templates/setup/configure.phtml:514
+msgid "State / region"
+msgstr "Stat / region"
+
+#: includes/templates/setup/configure.phtml:522
+msgid "Country"
+msgstr "Land"
+
+#: includes/templates/setup/configure.phtml:546
+msgid "Fill in your shipping-service credentials."
+msgstr "Ange dina uppgifter för frakttjänsten."
+
+#: includes/templates/setup/configure.phtml:552
+msgid ""
+"You received this information when you created your shipping-service account."
+msgstr "Du fick den här information när du skapade konto för din frakttjänst."
+
+#: includes/templates/setup/configure.phtml:608
+msgid "Enable service"
+msgstr "Aktivera tjänsten"
+
+#: includes/templates/setup/configure.phtml:712
+msgid "Service credentials are valid."
+msgstr "Frakttjänstens uppgifter är giltiga."
+
+#: includes/templates/setup/configure.phtml:720
+msgid "Service credentials are invalid, please review."
+msgstr "Uppgifter för frakttjänsten är ogiltiga, vänligen kontrollera."
+
+#: includes/templates/setup/configure.phtml:728
+msgid "Service communication problems."
+msgstr "Servicekommunikationsfel."
+
+#: includes/templates/setup/configure.phtml:742
+msgid ""
+"You need to enter a valid product license above to be able to enter service "
+"credentials."
+msgstr ""
+"Du behöver ange en giltig produktlicens ovan för att kunna ange "
+"frakttjänstuppgifter."
+
+#: includes/templates/setup/configure.phtml:753
+msgid "Save"
+msgstr "Spara"
+
+#: includes/templates/setup/redirect.phtml:22
+msgid "If you are not redirected within three seconds, click here to proceed."
+msgstr ""
+"Om du inte omdirigeras inom tre sekunder, klicka här för att fortsätta."
+
+#~ msgid "Did not loaded license status because information is lacking."
+#~ msgstr "Laddade inte licensstatus för att information saknas."
+
+#~ msgid "Loaded license status from file-system cache"
+#~ msgstr "Laddade licensstatus från filesystemets cache"
+
+#~ msgid "License exception: %s"
+#~ msgstr "Licens fel: %s"
+
+#~ msgid "Loaded license status from API"
+#~ msgstr "Laddade licensstatus från API"
+
+#~ msgid "Loaded license status from memory cache"
+#~ msgstr "Laddade licensstatus från minnescache"
+
+#~ msgid "Processing orders are only available with a valid license"
+#~ msgstr "Behandla beställningar är bara möjligt med en giltig licens"
+
+#~ msgid "Please verify your license for Oktagon Shipping here."
+#~ msgstr "Vänligen kontrollera din licens för Oktagon Shipping här."
+
+#~ msgid "SHIPIT Dashboard"
+#~ msgstr "SHIPIT Kontrollpanel"
+
+#~ msgid "SHIPIT"
+#~ msgstr "SHIPIT"
+
+#~ msgid "SHIPIT for WooCommerce"
+#~ msgstr "SHIPIT för WooCommerce"
+
+#~ msgid "%s cache hit for key \"%s\""
+#~ msgstr "%s cache träff för nyckel \"%s\""
+
+#~ msgid "Expiration \"%s\" has expired because time is \"%s\", expired: %s"
+#~ msgstr ""
+#~ "Utgångstiden \"%s\" har utgått eftersom tiden är \"%s\", utgången: %s"
+
+#~ msgid "Found %d items in cache directory"
+#~ msgstr "Hittade %d objekt i cache katalogen"
+
+#~ msgid "Deleting expired cache \"%s\""
+#~ msgstr "Raderar utgången cache \"%s\""
+
+#~ msgid "Keeping fresh cache \"%s\""
+#~ msgstr "Håller cache fräsch \"%s\""
+
+#~ msgid "Failed to load cache with error: \"%s\""
+#~ msgstr "Misslyckades att ladda cache med fel: \"%s\""
+
+#~ msgid "This plugin requires php-curl extension!"
+#~ msgstr "Detta tillägg kräver php-curl tillägg!"
+
+#~ msgid "Not all shipping-services have support for this."
+#~ msgstr "Inte alla frakttjänster har stöd för detta."
+
+#~ msgid ""
+#~ "With debug mode, API transactions are visible on every order in admin. "
+#~ "You will also see a log for scheduled activity at the bottom of this page."
+#~ msgstr ""
+#~ "Med felsökningsläge så syns API transaktioner på varje beställning i "
+#~ "admin."
+
+#~ msgid "Schedule Log"
+#~ msgstr "Loggbok för schemalagda processer"
+
+#~ msgid "Use information below to debug errors in automation."
+#~ msgstr "Använd informationen nedan för att felsöka fel i automationen."
+
+#~ msgid "ERROR"
+#~ msgstr "Fel"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "No activity log yet."
+#~ msgstr "Ingen aktivitet än."
+
+#~ msgid "Actions"
+#~ msgstr "Åtgärder"
+
+#~ msgid "WooCommerce SHIPIT"
+#~ msgstr "WooCommerce SHIPIT"
+
+#~ msgid "Automation Error"
+#~ msgstr "Automationsfel"
+
+#~ msgid "WooCommerce Shipit autoloader failed for class \"%s\" at \"%s\"!"
+#~ msgstr "WooCommerce autoladdare misslyckades för klass \"%s\" vid \"%s\"!"

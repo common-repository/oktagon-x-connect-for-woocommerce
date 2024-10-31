@@ -1,0 +1,389 @@
+body.woocommerce-cart .xconnect-checkout-option,
+body.woocommerce-cart .xconnect-checkout-header-box,
+body.woocommerce-cart .xconnect-checkout-search-input-box,
+body.woocommerce-cart .xconnect-checkout-search-header-text
+{
+    display: none;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .oktagon-x-connect-for-woocommerce-shipping-service-pick-up-agent {
+    margin-top: 15px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .oktagon-x-connect-for-woocommerce-shipping-service-logotype {
+    text-align: right;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .oktagon-x-connect-for-woocommerce-shipping-service-logotype>img {
+    display: inline;
+}
+
+/* Widget start */
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-totals>td {
+    padding: 0;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods {
+    padding: 0;
+    border-radius: 4px;
+    margin: 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend ul#shipping_method.woocommerce-shipping-methods  > li > input, 
+body.oktagon-x-connect-for-woocommerce-frontend ul#shipping_method.woocommerce-shipping-methods > li > label {
+    display: none;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods>li>div.xconnect-checkout-option {
+    display: block !important;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-header-text {
+    font-weight: 700;
+    padding-right: 20px;
+    font-size: 18px;
+    margin: 0;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-filter {
+    font-size: 11px;
+    margin: 5px 0 auto 0;
+    display: block;
+}
+
+/* Selected */
+body.oktagon-x-connect-for-woocommerce-frontend ul#shipping_method.woocommerce-shipping-methods .xconnect-checkout-option-selected {
+    border: 2px solid #216C92;
+    border-radius: 4px;
+    padding: 0.7rem;
+    margin-bottom: 0.75rem;
+    background-color: #e2ecfb;
+}
+
+/* NOT Selected */
+body.oktagon-x-connect-for-woocommerce-frontend ul#shipping_method.woocommerce-shipping-methods .xconnect-checkout-option-not-selected {
+    border: 1px solid rgb(193, 197, 202);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0.7rem;
+    margin-bottom: 0.75rem;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-and-img-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-header {
+    display: flex;
+    flex-direction: column;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-box {
+    display: flex;
+    margin: auto 8px auto 0;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-input {
+    margin-top: 2px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-input:focus {
+    outline: none;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-chosen-agent-box {
+    padding: 0.75rem;
+    width: 100%
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-chosen-agent {
+    font-weight: 500;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-chosen-agent-box .xconnect-checkout-chosen-agent-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-chosen-agent-box .xconnect-checkout-chosen-agent-flex .xconnect-checkout-dropdown-icon-box {
+    margin: auto 0;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-chosen-agent-box .xconnect-checkout-chosen-agent-flex .xconnect-checkout-dropdown-icon {
+    background: transparent url(../img/dropdown-arrow.svg) center center no-repeat scroll;
+    content: '';
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 14px;
+    margin-top: 6px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-chosen-agent-flex .xconnect-checkout-chosen-agent-description {
+    color: #6B7280;
+    font-size: 12px;
+    display: block;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-agents {
+    border: 1px solid #216C92;
+    background: white;
+    border-radius: 4px;
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-agents>label {
+    position: relative;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-description-box {
+    margin: 0 8px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-description {
+    color: #6B7280;
+    font-size: 13px;
+    display: block;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-text {
+    font-weight: 500;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-agent-placeholder {
+    top: -14px;
+    left: 5px;
+    position: absolute;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-agent-placeholder-text {
+    font-size: 10px;
+    color: rgb(137, 137, 137);
+    background-color: white;
+    padding: 0 5px 0 5px;
+    margin-top: 2px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend ul#shipping_method.woocommerce-shipping-methods .xconnect-checkout-option-agent-img-box-desktop {
+    margin: auto 0 auto auto;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend ul#shipping_method.woocommerce-shipping-methods .xconnect-checkout-option-agent-img-box-mobile {
+    display: none;
+    margin: auto 0 auto auto;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-agent-img {
+    max-height: 1rem;
+    min-height: 1rem;
+    max-width: 80px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-checkbox-icon {
+    margin: auto 0 auto auto;
+    max-height: 1rem;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-select-box {
+    position: relative;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-select {
+    appearance: none;
+    border: 1px solid #216C92;
+    color: #4B5563;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    left: 0;
+    opacity: 0;
+    padding: 1.3rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    cursor: pointer;
+}
+
+/* Search input */
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-header-text {
+    font-weight: 700;
+    padding-right: 20px;
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    color: #000000;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input-box {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input {
+    appearance: none;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(193, 197, 202);
+    font-size: 14px;
+    color: rgb(55 65 81);
+    background-color: white;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input:focus {
+    outline: none;
+    border: 1px solid #216C92;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input-placeholder {
+    top: -13px;
+    left: 5px;
+    position: absolute;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input-placeholder-text {
+    font-size: 10px;
+    color: rgb(137, 137, 137);
+    background-color: white;
+    padding: 0 5px 0 5px;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input-button {
+    background-color: #3377cb;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border: none;
+    cursor: pointer;
+    width: 28%;
+}
+
+body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input-button:hover {
+    background-color: #3685e6;
+}
+
+@media only screen and (max-width: 320px) {
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-agent-placeholder-text {
+        padding: 0 4px 0 4px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-description {
+        font-size: 12px;
+    }
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-box {
+        min-width: 55px;
+    }
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-text {
+        font-size: 14px;
+    }
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-input {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 425px) {
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-agent-img {
+        max-height: 1.3rem;
+    }
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods {
+        padding: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-description-box {
+        margin: 0;
+        margin-left: 18px;
+    }
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-agent-img-box-desktop {
+        display: none;
+    }
+
+    body.oktagon-x-connect-for-woocommerce-frontend ul#shipping_method.woocommerce-shipping-methods .xconnect-checkout-option-agent-img-box-mobile {
+        display: block;
+        min-width: 25%;
+    }
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-input {
+        margin-top: 3px;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-agent-img {
+        max-height: 1.5rem;
+        min-height: 1rem;
+    }
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-header {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 620px) {
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-filter {
+        margin: 5px 0 auto auto;
+    }
+}
+@media only screen and (max-width: 875px) {
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-search-input-button {
+        width: 50%;
+    }
+}
+
+
+
+/* Widget end */
+
+/* Modify Klarna checkout design to make shipping selection bigger */
+@media screen and (min-width: 769px) {
+
+    body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend #kco-order-review,
+    body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend #kco-iframe {
+        width: 49%;
+    }
+
+    body.oktagon-x-connect-for-woocommerce-frontend .woocommerce-shipping-methods .xconnect-checkout-option-price-input {
+        margin-top: 0px;
+    }
+}
+
+
+/* Runs when setting remove all woocommerce content in order-review, showing only shipping options */
+body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend-do-adjust-order-review .shop_table.woocommerce-checkout-review-order-table thead,
+body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend-do-adjust-order-review .shop_table.woocommerce-checkout-review-order-table tbody,
+body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend-do-adjust-order-review .shop_table.woocommerce-checkout-review-order-table .cart-subtotal,
+body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend-do-adjust-order-review .shop_table.woocommerce-checkout-review-order-table .order-total,
+body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend-do-adjust-order-review .shop_table.woocommerce-checkout-review-order-table .woocommerce-shipping-totals th {
+    display: none;
+}
+
+body.woocommerce-checkout.oktagon-x-connect-for-woocommerce-frontend-do-adjust-order-review .shop_table.woocommerce-checkout-review-order-table .woocommerce-shipping-totals .woocommerce-shipping-methods {
+    padding: 0;
+    margin: 0;
+}

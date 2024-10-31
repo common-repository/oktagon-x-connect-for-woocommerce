@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var string $url
+ * @phan-file-suppress PhanUndeclaredGlobalVariable
+ */
+?>
+<script type="text/javascript">
+    setTimeout(
+        function()
+        {
+            window.location = "<?php echo \esc_attr($url); ?>";
+        },
+        3000
+    );
+</script>
+<p class="redirect-notice">
+<?php
+printf(
+    '<a href="%s">%s</a>',
+    \esc_attr($url),
+    esc_html__(
+        'If you are not redirected within three seconds, click here to proceed.',
+        'oktagon-x-connect-for-woocommerce'
+    )
+);
+?>
+</p>

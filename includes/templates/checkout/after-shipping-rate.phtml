@@ -1,0 +1,141 @@
+<?php
+
+/**
+ * @var string $carrier
+ * @var string $customLogo
+ * @var bool $enabledPickUpPointSelection
+ * @var bool $isFirst
+ * @var string $id
+ * @var string $description
+ * @var bool $isSelected
+ * @var $isSelected bool
+ * @var string $nonce
+ * @var string $packageHashKey
+ * @var array $pickUpAgents
+ * @var string $predefinedLogo
+ * @var float $price
+ * @var \WC_Shipping_Rate $rate
+ * @var array $selectedPickUpPoint
+ * @var string $shippingService
+ * @var string $title
+ */
+
+'@phan-file-suppress PhanUndeclaredGlobalVariable';
+
+/**
+ * phpcs:disable Generic.Files.LineLength.TooLong
+ */
+
+if ($isFirst) { ?>
+<p class="xconnect-checkout-search-header-text">
+    <?php printf(esc_html__('Search for delivery options & agents', 'oktagon-x-connect-for-woocommerce'));?>
+</p>
+<div class="xconnect-checkout-search-input-box">
+    <input class="xconnect-checkout-search-input" type="text" placeholder="ex. 123 45" />
+    <div class="xconnect-checkout-search-input-placeholder">
+        <span class="xconnect-checkout-search-input-placeholder-text">
+        <?php printf(esc_html__('Enter your zip code', 'oktagon-x-connect-for-woocommerce')); ?>
+        </span>
+    </div>
+    <button type="button" class="xconnect-checkout-search-input-button">
+        <?php printf(esc_html__('Search', 'oktagon-x-connect-for-woocommerce')); ?>
+    </button>
+</div>
+<div class="xconnect-checkout-header-box">
+    <p class="xconnect-checkout-header-text">
+        <?php printf(esc_html__('Choose delivery option', 'oktagon-x-connect-for-woocommerce'));?>
+    </p>
+</div>
+<?php } ?>
+
+<div class="xconnect-checkout-option xconnect-checkout-option-<?php echo $isSelected ? 'selected' : 'not-selected'; ?> xconnect-checkout-shipping-service-<?php echo preg_replace('/[^a-zA-Z]/', '-', $shippingService); ?>" data-nonce="<?php echo \esc_attr($nonce); ?>" style="display: none;">
+
+    <div class="xconnect-checkout-option-header">
+        <div class="xconnect-checkout-option-price-and-img-box">
+            <div class="xconnect-checkout-option-price-box">
+                <input type="radio" value="<?php echo $shippingService; ?>" class="xconnect-checkout-option-price-input"<?php echo $isSelected ? ' checked="checked"' : ''; ?> />
+                <strong class="xconnect-checkout-option-price-text">
+                    <?php echo \wc_price($price); ?>
+                </strong>
+            </div>
+            <div class="xconnect-checkout-option-agent-img-box-mobile">
+                <?php if (!empty($customLogo)) { ?>
+                    <img src="<?php echo \esc_attr($customLogo); ?>" class="xconnect-checkout-option-agent-img" alt="carrier-logo" />
+                <?php } elseif (!empty($predefinedLogo)) { ?>
+                    <img src="<?php echo \esc_attr($predefinedLogo); ?>" class="xconnect-checkout-option-agent-img" alt="carrier-logo" />
+                <?php } ?>
+            </div>
+        </div>
+        <div class="xconnect-checkout-option-description-box">
+            <span class="xconnect-checkout-option-description title">
+                <?php echo \esc_attr($title); ?>
+            </span>
+            <span class="xconnect-checkout-option-description description">
+                <?php echo \esc_attr($description); ?>
+            </span>
+        </div>
+        <div class="xconnect-checkout-option-agent-img-box-desktop">
+                <?php if (!empty($customLogo)) { ?>
+                    <img src="<?php echo \esc_attr($customLogo); ?>" class="xconnect-checkout-option-agent-img" alt="carrier-logo" />
+                <?php } elseif (!empty($predefinedLogo)) { ?>
+                    <img src="<?php echo \esc_attr($predefinedLogo); ?>" class="xconnect-checkout-option-agent-img" alt="carrier-logo" />
+                <?php } ?>
+        </div>
+    </div>
+
+    <?php
+    if ($isSelected) {
+        if ($selectedPickUpPoint) {
+            ?>
+    <div class="xconnect-checkout-option-agents">
+        <div class="xconnect-checkout-agent-placeholder">
+            <span class="xconnect-checkout-agent-placeholder-text"><?php _e('Deliver to this service point', 'oktagon-x-connect-for-woocommerce'); ?></span>
+        </div>
+        <label class="xconnect-checkout-chosen-agent-box">
+            <div class="xconnect-checkout-chosen-agent-flex">
+                <div>
+                    <span class="xconnect-checkout-chosen-agent" data-id="<?php echo \esc_attr($selectedPickUpPoint['id']); ?>">
+                        <?php echo \esc_attr($selectedPickUpPoint['title']); ?>
+                    </span>
+                    <span class="xconnect-checkout-chosen-agent-description">
+                        <?php echo \esc_attr($selectedPickUpPoint['address']); ?>
+                    </span>
+                </div>
+                <div class="xconnect-checkout-dropdown-icon-box">
+                    <span class="xconnect-checkout-dropdown-icon"></span>
+                </div>
+            </div>
+
+            <?php
+            if ($pickUpAgents) {
+                ?>
+            <select class="xconnect-checkout-option-select" data-package="<?php echo \esc_attr($packageHashKey); ?>" data-service="<?php echo \esc_attr($shippingService); ?>">
+                <?php
+
+                foreach ($pickUpAgents as $pickUpAgent) {
+                    printf(
+                        '<option data-address="%s" data-title="%s" value="%s"%s>%s</option>',
+                        \esc_attr($pickUpAgent['address']),
+                        \esc_attr($pickUpAgent['title']),
+                        \esc_attr($pickUpAgent['id']),
+                        $selectedPickUpPoint['id'] === $pickUpAgent['id'] ? ' selected="selected"' : '',
+                        sprintf(
+                            '%s, %s',
+                            \esc_attr($pickUpAgent['title']),
+                            \esc_attr($pickUpAgent['address'])
+                        )
+                    );
+                }
+
+                ?>
+        </select>
+                <?php
+            }
+            ?>
+        </label>
+    </div>
+            <?php
+        }
+    }
+    ?>
+</div>

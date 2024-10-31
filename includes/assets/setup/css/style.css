@@ -1,0 +1,453 @@
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .redirect-notice {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .notice {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper form>fieldset>p,
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper form>fieldset>div {
+    margin: 13px 0;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper a {
+    color: #39c;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper a:hover {
+    color: #037081;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper h1 {
+    background: transparent url('../img/oktagon_240x80-black.png') center center no-repeat scroll;
+    background-size: 100px;
+    color: transparent;
+    cursor: default;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 56px;
+    margin: 0;
+    padding: 0;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper h2 {
+    color: #0D234B;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 62px;
+    margin: 0 0 30px 0;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero {
+    background-color: #037081;
+    color: #fff;
+    padding: 0 15px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero h2 {
+    color: #fff;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero a {
+    color: #d5f1ff;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero a:hover {
+    color: #fff;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+    #oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero {
+        background-size: 200px;
+    }
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero p {
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero p,
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero h2 {
+    max-width: 520px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero .row {
+    margin: 0 auto;
+    max-width: 620px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero .left {
+    padding: 80px 0 83px 0;
+}
+
+@media screen and (min-width: 1170px) {
+    #oktagon-x-connect-for-woocommerce-setup-body-wrapper section.hero {
+        padding: 0;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero div.row {
+        display: flex;
+        max-width: none;
+        overflow: hidden;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero .left {
+        float: left;
+        width: 60%;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero .left .wrapper {
+        float: right;
+        margin-right: 140px;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero .right {
+        background-color: #39c;
+        flex: max-content;
+        float: right;
+        position: relative;
+        width: 40%;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body-wrapper .hero .bg {
+        background: #d5f1ff url('../img/bg.png') center center no-repeat scroll;
+        background-size: cover;
+        height: 727.26px;
+        left: -115px;
+        position: absolute;
+        top: -15px;
+        width: 1000px;
+    }
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body form {
+    box-sizing: border-box;
+    margin: 64px auto 0 auto;
+    max-width: 620px;
+    padding: 0 15px;
+}
+
+@media screen and (min-width: 1170px) {
+    #oktagon-x-connect-for-woocommerce-setup-body>form {
+        padding: 0;
+    }
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body form p>strong {
+    font-size: 24px;
+    line-height: 26px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body form>p {
+    margin-top: 50px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body form .desktop-split-right>div,
+#oktagon-x-connect-for-woocommerce-setup-body form .desktop-split-left>div {
+    margin: 1em 0;
+}
+
+@media screen and (min-width: 1170px) {
+    #oktagon-x-connect-for-woocommerce-setup-body form .row {
+        display: flex;
+        margin: 0 -15px;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-right,
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-left {
+        float: left;
+        width: 250px;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-right>p,
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-left>p,
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-right>div,
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-left>div {
+        margin: 0 15px;
+    }
+
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-left select,
+    #oktagon-x-connect-for-woocommerce-setup-body form .row .desktop-split-right select {
+        width: auto;
+    }
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper label>span {
+    color: #5E554A;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .tight>input[type="text"] {
+    max-width: 80px;
+    text-align: center;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .check-button {
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .check-button>span {
+    color: #000;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset.schedule-log>ul {
+    border: 1px #aaa solid;
+    color: #333;
+    height: 100px;
+    line-height: 1;
+    overflow: auto;
+    padding: 10px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset.schedule-log>ul>li {
+    margin: 0;
+    padding: 0;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper input[type="email"],
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper input[type="text"] {
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #999;
+    font-weight: bold;
+    max-width: 100%;
+    padding: 9px 16px;
+    width: 368px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper input[type="text"][readonly="readonly"] {
+    color: #777;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper select {
+    background: #fff;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    color: #999;
+    font-weight: bold;
+    max-width: 100%;
+    padding: 9px 40px 9px 16px;
+    position: relative;
+    width: 368px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .select-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .select-wrapper:after {
+    content: '';
+    clear: both;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .select-wrapper:before {
+    background: #ffffff url('../img/arrow.svg') center center no-repeat scroll;
+    content: '';
+    height: 10px;
+    pointer-events: none;
+    position: absolute;
+    right: 19px;
+    width: 18px;
+    top: 19px;
+    z-index: 1;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .radio-item {
+    display: flex;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .radio-item .radio-wrapper {
+    align-items: center;
+    display: flex;
+    margin-right: 8px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .radio-item .text-wrapper {
+    color: #000;
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .radio-item input {
+    vertical-align: middle;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset.schedule-log>ul>li+li {
+    border-top: 1px #aaa solid;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset {
+    position: relative;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset+fieldset {
+    margin-top: 64px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset>legend {
+    background-color: #fff;
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 53px;
+    margin-bottom: 10px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body form legend+p {
+    margin-top: 40px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body form>fieldset>div+div {
+    margin-top: 64px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset.terms {
+    margin-bottom: 20px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset .help-description {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 2px 0 5px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset .help-description.small {
+    color: #5E554A;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: -8px;
+    width: 368px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset .help-description+div {
+    margin-top: 24px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset .required>p>label>span,
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset .required>label>span {
+    position: relative;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset .required>p>label>span::after,
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset .required>label>span::after {
+    color: #f06365;
+    content: '*';
+    position: absolute;
+    right: -9px;
+    top: -2px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset.postal-address.same-as,
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper fieldset.invoice-address.same-as {
+    display: none;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper p.terms {
+    font-size: 16px;
+    font-style: italic;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper dl {
+    border: 1px #ddd solid;
+    margin: 40px 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper dt {
+    clear: left;
+    float: left;
+    font-weight: bold;
+    padding: 0;
+    width: 200px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper dd {
+    font-style: italic;
+    float: left;
+    margin: 0;
+    padding: none;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper ul.main-products {
+    list-style: disc inside none;
+    margin: 5px 0 20px 0;
+    padding-left: 15px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper ul.main-products>li {
+    margin: 0;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper h3.order-confirmation {
+    background: #ffffff url('../img/accept.svg') center left no-repeat scroll;
+    color: #0AA85C;
+    padding-left: 40px;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .credentials-valid {
+    color: #0AA85C;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .credentials-invalid {
+    color: #F06365;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .button-secondary {
+    background: gray;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #fff;
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 24px;
+    margin-right: 16px;
+    padding: 12px 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .button-primary {
+    background: #39c;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto;
+    line-height: 24px;
+    padding: 12px 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#oktagon-x-connect-for-woocommerce-setup-body-wrapper .service.not-active-service .service-options {
+    display: none;
+}
